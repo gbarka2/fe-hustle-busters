@@ -4,7 +4,7 @@ const Lead = (props) => {
 
   return (
     <div className="lead-div">
-
+      <Form />
     </div>
   )
 }

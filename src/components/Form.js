@@ -1,11 +1,10 @@
 import React from 'react'
 
 const Form = (props) => {
-  
 
   return (
     <div className="form-div">
-      <form>
+      <form onSubmit={}>
         <input 
           type="text"
           name="companyName"
@@ -48,6 +47,7 @@ const Form = (props) => {
           value={}
           onChange={}  
         />
+        <input type="submit" value={}/>
       </form>
     </div>
   )
