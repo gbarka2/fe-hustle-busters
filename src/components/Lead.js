@@ -4,18 +4,19 @@ import Form from './Form'
 const Lead = (props) => {
 
   return (
-    <table className="lead-div">
-      <tr>
-        <th>Company Name</th>
-        <th>Contact Name</th>
-        <th>Actual Revenue</th>
-      </tr>
-      <tr>
-        <td>{props.lead.contactName}</td>
-        <td>{props.lead.companyName}</td>
-      </tr>
+    <div className="lead-div">
+        <p>{props.lead.companyName}</p>
+        <p>{props.lead.owner}</p>
+        <p>{props.lead.contactName}</p>
+        <p>{props.lead.email}</p>
+        <p>{props.lead.active}</p>
+        <p>{props.lead.status}</p>
+        <p>{props.lead.division}</p>
+        <p>{props.lead.estimatedRevenue}</p>
+        <p>{props.lead.actualRevenue}</p>
+        <p>{props.lead._id}</p>
       {/* <Form /> */}
-    </table>
+    </div>
   )
 }
 

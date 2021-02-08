@@ -1,1 +1,19 @@
+.leads-div {
+  border: black solid 1px;
+}
 
+.leads-table-header {
+  border: green solid 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lead-div {
+  border: red solid 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
