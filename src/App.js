@@ -49,9 +49,9 @@ React.useEffect(() => {
   getDivisions();
 }, []);
 
-const getDivisionLeads = () => {
-  fetch(url + '/divisions/')
-}
+// const getDivisionLeads = () => {
+//   fetch(url + '/divisions/')
+// }
 
   return (
     <div>
