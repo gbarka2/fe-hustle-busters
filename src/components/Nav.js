@@ -2,9 +2,11 @@ import React from "react"
 import { Link } from "react-router-dom"
 //Import FontAwesome Component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 //Bootstrap
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
+
 
 
 const Navigation = (props) => {
@@ -37,6 +39,7 @@ const Navigation = (props) => {
                 </Nav>
             </Navbar.Collapse>
             </Navbar>
+
         </div>
     )
 }
