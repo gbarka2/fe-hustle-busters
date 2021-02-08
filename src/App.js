@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 
 //Components & Pages
-import Nav from './components/Nav'
+import Navigation from './components/Nav'
 import Login from './components/Login'
 import Division from './pages/Division'
 import Company from './pages/Company'
@@ -16,7 +16,7 @@ library.add(faEllipsisH)
 function App() {
   return (
     <div>
-      <Nav />
+      <Navigation />
       <Switch>
         <Route
           exact

@@ -2,16 +2,37 @@ import React from "react"
 import { Link } from "react-router-dom"
 //Import FontAwesome Component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//Shoelace library
-// import wrapCustomElement from '@shoelace-style/react-wrapper';
+//Bootstrap
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 
-
-
-const Nav = (props) => {
+const Navigation = (props) => {
     
 
     return(
         <div className="nav-div">
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                <Link to="/my-profile">
+                    <Nav.Link to="/my-profile">My Profile</Nav.Link>
+                </Link>
+                <Nav.Link>All Leads</Nav.Link>
+                <Nav.Link>All Divisions</Nav.Link>
+                </Nav>
+                <Navbar.Brand>HustleBusters</Navbar.Brand>
+                <Nav>
+                <Nav.Link>Logout</Nav.Link>
+                <Nav.Link>About</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+            </Navbar>
+
 
             {/* Mobile Nave */}
             <div className="nav-div-mobile">
@@ -77,4 +98,4 @@ const Nav = (props) => {
     )
 }
 
-export default Nav
+export default Navigation
