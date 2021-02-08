@@ -17,7 +17,7 @@ const Form = (props) => {
           value="blank"
           onChange="blank" 
         />
-          <input 
+        <input 
             type="text"
             name="contactTitle"
             value="blank"

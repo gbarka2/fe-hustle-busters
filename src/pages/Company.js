@@ -1,11 +1,11 @@
 import React from "react"
-import Lead from '../components/Lead'
+import Leads from '../components/Leads'
 
 const Company = (props) => {
     return(
         <div className="company-div">
-           Company component    
-           <Lead />
+          <h1>COMPANY Component</h1>
+          <Leads />
         </div>
     )
 }

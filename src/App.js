@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Division from './pages/Division'
 import Company from './pages/Company'
 import About from './pages/About'
+import Profile from './components/Profile'
 
 //Initialize FontAwesome Libraries
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -24,17 +25,17 @@ function App() {
           render={(rp) => <Login />}>
         </Route>
         <Route
-          path='division-leads'
+          path='/division-leads'
           render={(rp) => <Division />}>
         </Route>
         <Route
-          path='all-leads'
+          path='/all-leads'
           render={(rp) => <Company />}>
         </Route>
-        {/* <Route
-          path='about'
-          render={(rp) => <About />}>
-        </Route> */}
+        <Route
+          path='/my-profile'
+          render={(rp) => <Profile />}>
+        </Route>
       </Switch>
       <About />
     </div>
