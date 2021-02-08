@@ -3,7 +3,9 @@ import Leads from "../components/Leads"
 
 
 const Division = (props) => {
+    
     const { divisions } = props;
+    
     const loaded = () => (
         <div className="division-div">
         {divisions.map((division) => (
