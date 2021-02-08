@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 //Import FontAwesome Component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 //Shoelace library
 // import wrapCustomElement from '@shoelace-style/react-wrapper';
 
@@ -15,7 +16,7 @@ const Nav = (props) => {
 
             {/* Mobile Nave */}
             <div className="nav-div-mobile">
-                <FontAwesomeIcon icon="fa-ellipsis-h"/>
+                <FontAwesomeIcon icon={faEllipsisH}/>
                 <ul className="nav-ul-mobile">
                     <Link to="/my-profile">
                         <li className="nav-li-mobile">

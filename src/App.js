@@ -31,11 +31,12 @@ function App() {
           path='all-leads'
           render={(rp) => <Company />}>
         </Route>
-        <Route
+        {/* <Route
           path='about'
           render={(rp) => <About />}>
-        </Route>
+        </Route> */}
       </Switch>
+      <About />
     </div>
   );
 }
