@@ -44,6 +44,7 @@ const getDivisions = () => {
   })
 }
 
+
 React.useEffect(() => {
   getDivisions();
 }, []);
@@ -60,7 +61,7 @@ React.useEffect(() => {
         <Route
           path='/division-leads'
           render={(rp) => <Division 
-          {...rp} divisions={divisions.data}/>}/>
+          {...rp} divisions={divisions.data} leads={leads.data} />}/>
         
         <Route
           path='/all-leads'
