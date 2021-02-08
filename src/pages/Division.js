@@ -3,8 +3,11 @@ import React from "react"
 
 
 const Division = (props) => {
+    
     const { divisions } = props;
+
     const { leads } = props    
+
     const loaded = () => (
         <>
         <div className="division-div">
