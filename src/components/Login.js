@@ -11,16 +11,16 @@ const Login = (props) => {
               <input 
                 type="text"
                 name="username"
-                value={}
-                onChange={}  
+                value="blank"
+                onChange="blank"  
               />
               <input 
                 type="text"
                 name="password"
-                value={}
-                onChange={}  
+                value="blank"
+                onChange="blank"  
               />
-              <input type="submit" value={}/>
+              <input type="submit" value="blank" />
             </form>
             <button>Create New Account</button>
         </div>
