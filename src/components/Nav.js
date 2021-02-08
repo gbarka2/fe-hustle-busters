@@ -16,6 +16,7 @@ const Navigation = (props) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
+                    <Navbar.Brand expand="sm">HustleBusters</Navbar.Brand>
                     <Nav.Link>
                         <Link to="/my-profile">My Profile</Link>
                     </Nav.Link>
@@ -26,7 +27,6 @@ const Navigation = (props) => {
                         <Link to="/division-leads">All Divisions</Link>
                     </Nav.Link>
                 </Nav>
-                <Navbar.Brand>HustleBusters</Navbar.Brand>
                 <Nav>
                     <Nav.Link>
                         <Link to ="/">Logout</Link>
