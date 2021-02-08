@@ -6,7 +6,7 @@ const Profile = (props) => {
 
     const [user, setUser] = React.useState([])
 
-    //fetch user by ID
+    //fetch user by ID (will need to pass props for login)
     const getUser = (props) => {
         fetch(url + "/usernames/" + "6020a823e08ac89b1a42715d")
         .then((response) => response.json())
