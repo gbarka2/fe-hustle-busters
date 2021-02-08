@@ -1,12 +1,18 @@
 import React from 'react'
 import Lead from './Lead'
 
-const Leads = (props) => {
+const Leads = ({leads}) => {
 
+  console.log('leads props', leads.data)
   return (
     <div className="leads-div">
-      Leads component
-      <Lead />
+      {
+        leads.data !== undefined ?
+        leads.data.map((lead, index) => (
+          <Lead lead={lead} key={index} />
+        ))
+        : ""
+      }
     </div>
   )
 }
