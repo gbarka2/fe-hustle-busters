@@ -5,7 +5,7 @@ const Lead = (props) => {
 
   return (
     <div className="lead-div">
-      Lead Component
+      <p>{props.lead.contactName}</p>
       <Form />
     </div>
   )
