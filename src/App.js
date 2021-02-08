@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import {Route, Switch} from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+
+//Components & Pages
 import Nav from './components/Nav'
 import Login from './components/Login'
 import Division from './pages/Division'
 import Company from './pages/Company'
 import About from './pages/About'
 
+//Initialize FontAwesome Libraries
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
+library.add(faEllipsisH)
 
 function App() {
   return (
