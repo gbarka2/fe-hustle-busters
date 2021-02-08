@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import React from 'react'
 
 //Components & Pages
-import Nav from './components/Nav'
+import Navigation from './components/Nav'
 import Login from './components/Login'
 import Division from './pages/Division'
 import Company from './pages/Company'
@@ -50,7 +50,7 @@ React.useEffect(() => {
 
   return (
     <div>
-      <Nav />
+      <Navigation />
       <Switch>
         <Route
           exact
