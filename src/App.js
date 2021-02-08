@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
-import React from 'react'
+
 
 //Components & Pages
 import Navigation from './components/Nav'
@@ -44,6 +44,7 @@ const getDivisions = () => {
   })
 }
 
+
 React.useEffect(() => {
   getDivisions();
 }, []);
@@ -60,7 +61,7 @@ React.useEffect(() => {
         <Route
           path='/division-leads'
           render={(rp) => <Division 
-          {...rp} divisions={divisions.data}/>}/>
+          {...rp} divisions={divisions.data} leads={leads.data} />}/>
         
         <Route
           path='/all-leads'
