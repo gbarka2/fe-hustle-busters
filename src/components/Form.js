@@ -4,50 +4,50 @@ const Form = (props) => {
 
   return (
     <div className="form-div">
-      <form onSubmit={}>
+      <form onSubmit="blank">
         <input 
           type="text"
           name="companyName"
-          value={}
-          onChange={}  
+          value="blank"
+          onChange="blank"
         />
         <input 
           type="text"
           name="contactName"
-          value={}
-          onChange={}  
+          value="blank"
+          onChange="blank" 
         />
-          <input 
+        <input 
             type="text"
             name="contactTitle"
-            value={}
-            onChange={}  
+            value="blank"
+            onChange="blank" 
         />
         <input 
           type="text"
           name="phone"
-          value={}
-          onChange={}  
+          value="blank"
+          onChange="blank"
         />
         <input 
           type="text"
           name="email"
-          value={}
-          onChange={}  
+          value="blank"
+          onChange="blank" 
         />
         <input 
           type="text"
           name="estimatedRevenue"
-          value={}
-          onChange={}  
+          value="blank"
+          onChange="blank"  
         />
         <input 
           type="text"
           name="companyName"
-          value={}
-          onChange={}  
+          value="blank"
+          onChange="blank"  
         />
-        <input type="submit" value={}/>
+        <input type="submit" value="blank" />
       </form>
     </div>
   )
