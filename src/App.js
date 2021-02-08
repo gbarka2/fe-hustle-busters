@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import React from 'react'
@@ -16,9 +17,9 @@ import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 library.add(faEllipsisH)
 
 
-
 function App() {
   const url = "https://hustle-busters.herokuapp.com"
+
   const [leads, setLeads] = React.useState([])
 
   const getLeads = () => {
@@ -33,6 +34,20 @@ function App() {
     getLeads()
   }, [])
 
+
+const [divisions, setDivisions] = React.useState([])
+const getDivisions = () => {
+  fetch(url + '/divisions')
+  .then((response) => response.json())
+  .then((data) => {
+    setDivisions(data)
+  })
+}
+
+React.useEffect(() => {
+  getDivisions();
+}, []);
+
   return (
     <div>
       <Nav />
@@ -44,8 +59,9 @@ function App() {
         </Route>
         <Route
           path='/division-leads'
-          render={(rp) => <Division />}>
-        </Route>
+          render={(rp) => <Division 
+          {...rp} divisions={divisions.data}/>}/>
+        
         <Route
           path='/all-leads'
           render={(rp) => <Company leads={leads}/>}>
