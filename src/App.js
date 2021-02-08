@@ -1,5 +1,6 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
+import React from 'react'
 
 //Components & Pages
 import Nav from './components/Nav'
@@ -14,7 +15,24 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 library.add(faEllipsisH)
 
+
+
 function App() {
+  const url = "https://hustle-busters.herokuapp.com"
+  const [leads, setLeads] = React.useState([])
+
+  const getLeads = () => {
+    fetch(url + "/leads")
+    .then(response => response.json())
+    .then(data => {
+      setLeads(data)
+    })
+  }
+
+  React.useEffect(() => {
+    getLeads()
+  }, [])
+
   return (
     <div>
       <Nav />
@@ -30,7 +48,7 @@ function App() {
         </Route>
         <Route
           path='/all-leads'
-          render={(rp) => <Company />}>
+          render={(rp) => <Company leads={leads}/>}>
         </Route>
         <Route
           path='/my-profile'
