@@ -46,17 +46,18 @@ const getDivisions = () => {
   })
 }
 
+const getDivisionByName = () => {
+  fetch(url + '/divisions/' + searchDivision)
+  .then(response => response.json())
+  .then(() => {
+    getDivisions()
+  })
+}
+
 React.useEffect(() => {
   getDivisions();
 }, []);
 
-const getDivisionByName = () => {
-  fetch(url + '/divisions' + searchDivision)
-  .then(response => response.json())
-  .then(() => {
-    getLeads()
-  })
-}
 
 
   return (

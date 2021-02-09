@@ -5,7 +5,6 @@ import Search from '../components/Search'
 
 const Division = (props) => {
   const { divisions } = props
-  console.log('divisions.leads', divisions[0].leads)
   const { leads } = props    
   const loaded = () => (
     <>
