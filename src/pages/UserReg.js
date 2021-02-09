@@ -1,65 +1,43 @@
-import React, { useState } from "react"
+import React from "react"
 
 
 const UserReg = (props) => {
 
-    const url = "https://hustle-busters.herokuapp.com"
-
-    //set state
-    const [regData, setRegData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        userName: "",
-        password: ""
-    })
+    console.log('props-', props)
     
-    //Capture data in handle change
-    const handleChange = (event) => {
-        const{id, value} = event.target
-        setRegData(prevState => ({
-            ...prevState,
-            [id] : value
-        }))
-    }
-
-    //If data exists, send to server
-    const createUser = (newUser) => {
-        if (regData.firstName.length &&
-            regData.lastName.length &&
-            regData.email.length &&
-            regData.userName.length &&
-            regData.password.length){
-            const payload = {
-                "firstName" : regData.firstName,
-                "lastName" : regData.lastName,
-                "email" : regData.email,
-                "useName" : regData.useName,
-                "password" : regData.useName
-            }
-        fetch(url + "/", {
-            method: "post",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify(newUser)
-        })
-        .then(()=>{
-            props.history.push('/')
-        })
-        }
-    }
+    //set state
+    const [regData, setRegData] = React.useState(props.user)
 
 
     //click even handler for sending data to backend
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (regData.password === regData.confirmPassword){
-            createUser()
-        } else {
-            props.history.push('/user-registration')
-        }
+        props.handleSubmit(regData)
+        props.history.push("/")
+        /////save below for post MVP///////
+        // if (regData.password === regData.confirmPassword){
+        //     createUser()
+        //     props.history.push('/')
+        // } else {
+        //     props.history.push('/user-registration')
+        // }
     }
+    
+    //Capture data in handle change
+    const handleChange = (event) => {
+        setRegData({...regData, [event.target.name]: event.target.value })
+    }
+
+    //If data exists ...
+    // const createUser = (newUser) => {
+    //     if (regData.firstName.length &&
+    //         regData.lastName.length &&
+    //         regData.email.length &&
+    //         regData.userName.length &&
+    //         regData.password.length){
+        
+
+
 
 
     return(
@@ -80,6 +58,14 @@ const UserReg = (props) => {
                     value={regData.lastName}
                     onChange={handleChange}
                 />
+                <label>Email</label>
+                <input 
+                    type="email"
+                    id="email"
+                    value={regData.email}
+                    onChange={handleChange}
+
+                />
                 <label>User Name</label>
                 <input 
                     type="text"
@@ -92,14 +78,6 @@ const UserReg = (props) => {
                     type="password"
                     id="password"
                     value={regData.password}
-                    onChange={handleChange}
-
-                />
-                <label>Email</label>
-                <input 
-                    type="email"
-                    id="email"
-                    value={regData.email}
                     onChange={handleChange}
 
                 />
