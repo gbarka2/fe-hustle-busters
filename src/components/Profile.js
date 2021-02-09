@@ -2,7 +2,8 @@ import React from "react"
 
 const Profile = (props) => {
 
-    const url = "https://hustle-busters.herokuapp.com"
+    const url = "http://localhost:4000"
+    // const url = "https://hustle-busters.herokuapp.com"
 
     const [user, setUser] = React.useState([])
 

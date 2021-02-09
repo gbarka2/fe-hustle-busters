@@ -1,3 +1,10 @@
+/* LOGIN COMPONENET  */
+
+.login-div {
+  margin: 0 auto 0 auto
+}
+
+/* LEADS COMPONENT */
 .leads-div {
   border: black solid 1px;
 }
