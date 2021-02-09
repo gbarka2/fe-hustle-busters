@@ -5,10 +5,9 @@ import Search from '../components/Search'
 
 const Division = (props) => {
   const { divisions } = props
-  const { leads } = props    
   const loaded = () => (
     <>
-      <Search value="Divisions" placeholder="Enter Division Here" getDivisionByName={props.getDivisionByName} searchDivision={props.searchDivision} setSearchDivision={props.setSearchDivision}/>
+      <Search value="Divisions" placeholder="Enter Division Here" getDivisionByName={props.getDivisionByName} searchDivision={props.searchDivision} setSearchDivision={props.setSearchDivision} setDivisions={props.setDivisions} />
       <div className="division-div">
       {divisions.map((division) => (
         <article key={division._id}>
@@ -19,11 +18,6 @@ const Division = (props) => {
           {division.leads.map((lead, index) => (
             <Lead lead={lead} key={index}/>
           ))}
-        {/* {leads.map((lead) => (
-            <article key={lead._id}>
-                <h2>{lead.companyName}</h2>
-            </article> */}
-        {/* ))} */}
         </div>
         </article>
       ))}
@@ -34,7 +28,7 @@ const Division = (props) => {
   const loading = <h1>Loading...</h1>
   
   
-  return divisions || leads ? loaded() : loading 
+  return divisions ? loaded() : loading 
 }
 
 export default Division;

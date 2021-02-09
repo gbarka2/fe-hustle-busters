@@ -6,7 +6,8 @@ const Lead = (props) => {
   return (
     <div className="lead-div">
         <p>{props.lead.companyName}</p>
-        <p>{props.lead.owner}</p>
+        <button>See Profile</button>
+        {/* <p>{props.lead.owner}</p>
         <p>{props.lead.contactName}</p>
         <p>{props.lead.email}</p>
         <p>{props.lead.active}</p>
@@ -14,7 +15,7 @@ const Lead = (props) => {
         <p>{props.lead.division}</p>
         <p>{props.lead.estimatedRevenue}</p>
         <p>{props.lead.actualRevenue}</p>
-        <p>{props.lead._id}</p>
+        <p>{props.lead._id}</p> */}
       {/* <Form /> */}
     </div>
   )

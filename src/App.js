@@ -18,7 +18,8 @@ library.add(faEllipsisH)
 
 
 function App() {
-  const url = "https://hustle-busters.herokuapp.com"
+  // const url = "https://hustle-busters.herokuapp.com"
+  const url = "http://localhost:4000"
 
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
@@ -42,15 +43,21 @@ const getDivisions = () => {
   .then((response) => response.json())
   .then((data) => {
     setDivisions(data)
-    console.log(divisions)
+    // console.log(divisions)
   })
 }
 
-const getDivisionByName = () => {
-  fetch(url + '/divisions/' + searchDivision)
+const getDivisionByName = (searchDivision) => {
+  console.log('searched division', searchDivision)
+  fetch(url + '/divisions/name/' + searchDivision)
+
   .then(response => response.json())
-  .then(() => {
-    getDivisions()
+  .then((data) => {
+    setDivisions(data)
+    console.log('getDivisionByName data', data)
+    // console.log('getDivisionByName divisions', divisions)
+
+    // getDivisions()
   })
 }
 
@@ -58,7 +65,9 @@ React.useEffect(() => {
   getDivisions();
 }, []);
 
-
+// React.useEffect(() => {
+//   getDivisionByName()
+// }, [])
 
   return (
     <div>
@@ -72,7 +81,7 @@ React.useEffect(() => {
         <Route
           path='/division-leads'
           render={(rp) => <Division 
-          {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision}/>}/>
+          {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision} setDivisions={setDivisions} />}/>
         
         <Route
           path='/all-leads'
