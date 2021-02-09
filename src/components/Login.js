@@ -1,28 +1,34 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const Login = (props) => {
+
+  const [loginData, setLoginData] = React.useState(props.user)
+  console.log("login state-", )
+
     return(
         <div className="login-div">
           <h4>Logo Goes Here</h4>   
           <h1>Hustle Busters</h1>
           <h2>Hustle your way into BUSTING competition</h2>
             <form>
-              <h4>Username</h4>
+              <label>Username</label>
               <input 
                 type="text"
                 name="username"
-                value="blank"
-                onChange="blank"  
+                onChange=" "  
               />
+              <label>Password</label>
               <input 
                 type="text"
                 name="password"
-                value="blank"
-                onChange="blank"  
+                onChange=" "  
               />
-              <input type="submit" value="blank" />
+              <input type="submit" value="Login" />
             </form>
-            <button>Create New Account</button>
+            <Link to="/user-registration">
+            <p>Create New Account</p>
+            </Link>
         </div>
     )
 }

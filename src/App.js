@@ -10,10 +10,12 @@ import Division from './pages/Division'
 import Company from './pages/Company'
 import About from './pages/About'
 import Profile from './components/Profile'
+import User from './pages/UserReg'
 
 //Initialize FontAwesome Libraries
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
+import UserReg from './pages/UserReg';
 library.add(faEllipsisH)
 
 
@@ -77,6 +79,10 @@ React.useEffect(() => {
           exact
           path='/'
           render={(rp) => <Login />}>
+        </Route>
+        <Route
+          path='/user-registration'
+          render={(rp) => <UserReg />}>
         </Route>
         <Route
           path='/division-leads'
