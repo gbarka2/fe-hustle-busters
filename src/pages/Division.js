@@ -1,5 +1,6 @@
 import React from "react"
 import Lead from "../components/Lead"
+import Search from '../components/Search'
 
 
 const Division = (props) => {
@@ -8,6 +9,7 @@ const Division = (props) => {
   const { leads } = props    
   const loaded = () => (
     <>
+      <Search value="Divisions" placeholder="Enter Division Here" getDivisionByName={props.getDivisionByName} searchDivision={props.searchDivision} setSearchDivision={props.setSearchDivision}/>
       <div className="division-div">
       {divisions.map((division) => (
         <article key={division._id}>
