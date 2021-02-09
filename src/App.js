@@ -1,5 +1,6 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
+import React from 'react'
 
 
 //Components & Pages
@@ -33,24 +34,21 @@ function App() {
     getLeads()
   }, [])
 
-
 const [divisions, setDivisions] = React.useState([])
 const getDivisions = () => {
   fetch(url + '/divisions')
   .then((response) => response.json())
   .then((data) => {
     setDivisions(data)
+    console.log(divisions)
   })
 }
-
 
 React.useEffect(() => {
   getDivisions();
 }, []);
 
-const getDivisionLeads = () => {
-  fetch(url + '/divisions/')
-}
+
 
   return (
     <div>
