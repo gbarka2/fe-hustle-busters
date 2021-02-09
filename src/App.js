@@ -21,8 +21,8 @@ library.add(faEllipsisH)
 
 
 function App() {
-  // const url = "https://hustle-busters.herokuapp.com"
-  const url = "http://localhost:4000"
+  const url = "https://hustle-busters.herokuapp.com"
+  // const url = "http://localhost:4000"
 
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
@@ -35,6 +35,24 @@ function App() {
       setLeads(data)
     })
   }
+
+
+
+// ATTEMPTING TO GET LEAD onClick
+const handleGet = (lead) => {
+  fetch(url + "/leads/" + lead._id, {
+    method:"get",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(lead)
+  }).then(() => {
+    getLeads()
+  })
+}
+
+
+ 
 
   React.useEffect(() => {
     getLeads()
@@ -89,11 +107,17 @@ React.useEffect(() => {
           path='/division-leads'
           render={(rp) => <Division 
           {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision} setDivisions={setDivisions} />}/>
-        
+         
         <Route
           path='/all-leads'
-          render={(rp) => <Company leads={leads}/>}>
+          render={(rp) => <Company leads={leads} />}>
         </Route>
+        
+        <Route //Trying to figure this out
+          path='/leads'
+          render={(rp) => <Company label="get"  leads={leads} handleSubmit={handleGet} />}>
+        </Route>
+        
         <Route
           path='/my-profile'
           render={(rp) => <Profile />}>
