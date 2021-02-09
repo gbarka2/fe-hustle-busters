@@ -9,9 +9,33 @@ const UserReg = (props) => {
                <label>First Name</label>
                 <input 
                     type="text"
-                    id="FirtNamr"
+                    id="FirstName"
                 />
-                
+                <label>Last Name</label>
+                <input 
+                    type="text"
+                    id="LastName"
+                />
+                <label>User Name</label>
+                <input 
+                    type="text"
+                    id="UserName"
+                />
+                <label>Password</label>
+                <input 
+                    type="password"
+                    id="Password"
+                />
+                <label>Confrim Password</label>
+                <input 
+                    type="password"
+                    id="ConfirmPassword"
+                />
+                <button
+                    type="submit"
+                    >
+                    Register as New User
+                </button>
             </form>    
         </div>
     )
