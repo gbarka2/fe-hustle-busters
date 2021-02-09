@@ -20,12 +20,13 @@ library.add(faEllipsisH)
 
 
 function App() {
-  // const url = "https://hustle-busters.herokuapp.com"
-  const url = "http://localhost:4000"
+  const url = "https://hustle-busters.herokuapp.com"
+  // const url = "http://localhost:4000"
 
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
   const [searchDivision, setSearchDivision] = React.useState("")
+  const [searchUserLead, setSearchUserLead] = React.useState("")
 
   const getLeads = () => {
     fetch(url + "/leads")
@@ -45,21 +46,14 @@ const getDivisions = () => {
   .then((response) => response.json())
   .then((data) => {
     setDivisions(data)
-    // console.log(divisions)
   })
 }
 
 const getDivisionByName = (searchDivision) => {
-  console.log('searched division', searchDivision)
   fetch(url + '/divisions/name/' + searchDivision)
-
   .then(response => response.json())
   .then((data) => {
     setDivisions(data)
-    console.log('getDivisionByName data', data)
-    // console.log('getDivisionByName divisions', divisions)
-
-    // getDivisions()
   })
 }
 
@@ -67,9 +61,13 @@ React.useEffect(() => {
   getDivisions();
 }, []);
 
-// React.useEffect(() => {
-//   getDivisionByName()
-// }, [])
+const getLeadByCompanyNameUser = (searchUserLead) => {
+  fetch(url + '/usernames/name/' + searchUserLead)
+  .then(response => response.json())
+  .then((data) => {
+    setLeads(data)
+  })
+}
 
   return (
     <div>
@@ -95,7 +93,7 @@ React.useEffect(() => {
         </Route>
         <Route
           path='/my-profile'
-          render={(rp) => <Profile />}>
+          render={(rp) => <Profile searchUserLead={searchUserLead} setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}  />}>
         </Route>
       </Switch>
       <About />

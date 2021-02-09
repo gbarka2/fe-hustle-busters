@@ -1,4 +1,6 @@
 import React from "react"
+import Search from './Search'
+import Lead from './Lead'
 
 const Profile = (props) => {
 
@@ -12,7 +14,7 @@ const Profile = (props) => {
         fetch(url + "/usernames/" + "6020a823e08ac89b1a42715d")
         .then((response) => response.json())
         .then((data) => {
-            console.log('data-', data)
+            console.log('user data-', data)
             setUser(data[0])
         })
     }
@@ -23,11 +25,32 @@ const Profile = (props) => {
 
     // console.log("userName props-", props)
 
-    return(
+    const handleUserLeadChange = (event) => {
+      event.preventDefault()
+      props.setSearchUserLead(event.target.value)
+    }
+
+    const handleUserLeadSubmit = (event) => {
+      event.preventDefault()
+      if (props.searchDivision !== "") {
+          props.getLeadByCompanyNameUser(props.searchUserLead)
+      }
+    }
+  
+  const loaded = () => (
         <div className="profile-div">
-            <h2>Hi {user.firstName} {user.lastName}</h2>    
+          <h2>Hi {user.firstName} {user.lastName}</h2>   
+          <Search value="Your Hustles" placeholder="Enter Company Name" handleChange={handleUserLeadChange} handleSubmit={handleUserLeadSubmit} /> 
+          <hr />
+          {user.leads.map((lead, index) => (
+            <Lead lead={lead} key={index} />
+          ))} 
         </div>
     )
+  
+  const loading = <h1>Hustling...</h1>
+
+  return user ? loaded() : loading
 }
 
 export default Profile
