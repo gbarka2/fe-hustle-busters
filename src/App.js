@@ -20,8 +20,8 @@ library.add(faEllipsisH)
 
 
 function App() {
-  // const url = "https://hustle-busters.herokuapp.com"
-  const url = "http://localhost:4000"
+  const url = "https://hustle-busters.herokuapp.com"
+  // const url = "http://localhost:4000"
 
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])

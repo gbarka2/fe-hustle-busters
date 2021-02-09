@@ -3,10 +3,13 @@ import React, { useState } from "react"
 
 const UserReg = (props) => {
 
+    const url = "https://hustle-busters.herokuapp.com"
+
     //set state
     const [regData, setRegData] = useState({
         firstName: "",
         lastName: "",
+        email: "",
         userName: "",
         password: ""
     })
@@ -18,6 +21,44 @@ const UserReg = (props) => {
             ...prevState,
             [id] : value
         }))
+    }
+
+    //If data exists, send to server
+    const createUser = (newUser) => {
+        if (regData.firstName.length &&
+            regData.lastName.length &&
+            regData.email.length &&
+            regData.userName.length &&
+            regData.password.length){
+            const payload = {
+                "firstName" : regData.firstName,
+                "lastName" : regData.lastName,
+                "email" : regData.email,
+                "useName" : regData.useName,
+                "password" : regData.useName
+            }
+        fetch(url + "/", {
+            method: "post",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(newUser)
+        })
+        .then(()=>{
+            props.history.push('/')
+        })
+        }
+    }
+
+
+    //click even handler for sending data to backend
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        if (regData.password === regData.confirmPassword){
+            createUser()
+        } else {
+            props.history.push('/user-registration')
+        }
     }
 
 
@@ -54,13 +95,24 @@ const UserReg = (props) => {
                     onChange={handleChange}
 
                 />
+                <label>Email</label>
+                <input 
+                    type="email"
+                    id="email"
+                    value={regData.email}
+                    onChange={handleChange}
+
+                />
                 <label>Confrim Password</label>
                 <input 
                     type="password"
                     id="confirmPassword"
+                    value={regData.confirmPassword}
+                    onChange={handleChange}
                 />
                 <button
                     type="submit"
+                    onClick={handleSubmit}
                     >
                     Register as New User
                 </button>
