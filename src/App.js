@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 
 
+
 //Components & Pages
 import Navigation from './components/Nav'
 import Login from './components/Login'
@@ -21,6 +22,8 @@ function App() {
   const url = "https://hustle-busters.herokuapp.com"
 
   const [leads, setLeads] = React.useState([])
+  const [divisions, setDivisions] = React.useState([])
+  const [searchDivision, setSearchDivision] = React.useState("")
 
   const getLeads = () => {
     fetch(url + "/leads")
@@ -35,23 +38,28 @@ function App() {
   }, [])
 
 
-const [divisions, setDivisions] = React.useState([])
 const getDivisions = () => {
   fetch(url + '/divisions')
   .then((response) => response.json())
   .then((data) => {
     setDivisions(data)
+    console.log(divisions)
   })
 }
 
+const getDivisionByName = () => {
+  fetch(url + '/divisions/' + searchDivision)
+  .then(response => response.json())
+  .then(() => {
+    getDivisions()
+  })
+}
 
 React.useEffect(() => {
   getDivisions();
 }, []);
 
-// const getDivisionLeads = () => {
-//   fetch(url + '/divisions/')
-// }
+
 
   return (
     <div>
@@ -65,7 +73,7 @@ React.useEffect(() => {
         <Route
           path='/division-leads'
           render={(rp) => <Division 
-          {...rp} divisions={divisions.data} leads={leads.data} />}/>
+          {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision}/>}/>
         
         <Route
           path='/all-leads'
