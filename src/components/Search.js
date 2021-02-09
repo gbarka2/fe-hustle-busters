@@ -5,17 +5,20 @@ const Search = (props) => {
     const handleChange = (event) => {
         event.preventDefault()
         props.setSearchDivision(event.target.value)
+        // props.setDivisions()
+        // console.log(event.target.value)
     }
 
     const handleSubmit = (event) => {
+        event.preventDefault()
         if (props.searchDivision !== "") {
-            props.getDivisionByName()
+            props.getDivisionByName(props.searchDivision)
         }
     }
 
     return(
         <div className="search-div">Search {props.value}
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input 
                     type="text"
                     name="searchbox"
@@ -23,7 +26,7 @@ const Search = (props) => {
                     placeholder={props.placeholder}
                     onChange={handleChange} 
                 />
-                <input type="submit" value="Submit" onClick={handleSubmit}/>
+                <input type="submit" value="Submit"/>
             </form>
             <hr />
         </div>

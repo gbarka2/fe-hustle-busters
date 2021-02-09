@@ -6,7 +6,7 @@ const Leads = ({leads}) => {
   console.log('leads props', leads.data)
   return (
     <div className="leads-div">
-      <div className="leads-table-header">
+      {/* <div className="leads-table-header">
         <p>Company Name |</p>
         <p>Owner |</p>
         <p>Contact Name</p>
@@ -17,7 +17,7 @@ const Leads = ({leads}) => {
         <p>Estimated Revenue</p>
         <p>Actual Revenue</p>
         <p>Lead ID</p>
-      </div>
+      </div> */}
       {
         leads.data !== undefined ?
         leads.data.map((lead, index) => (
