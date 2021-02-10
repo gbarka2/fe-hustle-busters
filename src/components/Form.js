@@ -2,7 +2,7 @@ import React from 'react'
 
 const Form = (props) => {
   console.log('props from form', props)
-  console.log(props.selectedLead)
+  console.log("selectedLead", props.selectedLead)
   return (
     <div className="form-div">
       <form 
@@ -11,7 +11,7 @@ const Form = (props) => {
         <input 
           type="text"
           name="companyName"
-          placeholder="Company Name"
+          placeholder={props.selectedLead.companyName}
           // onChange="blank"
         />
         <input 

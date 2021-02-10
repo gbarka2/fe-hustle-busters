@@ -68,8 +68,7 @@ function App() {
         body: JSON.stringify(newUser)
     })
     }
-  
-  
+
   //GET LEADS
   const getLeads = () => {
     fetch(url + "/leads")
@@ -121,12 +120,13 @@ const selectLead = (lead) => {
 }
 
 const deleteLead = (lead) => {
+  console.log('delete', lead)
   fetch(url + '/leads/' + lead._id, {
     method: "delete"
   })
-  .then((data) => {
-    getLeads(data)
-  })
+  // .then(() => {
+  //   getLeads()
+  // })
 }
 
 
