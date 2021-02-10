@@ -156,12 +156,14 @@ const deleteLead = (lead) => {
           render={(rp) => <Profile 
           userLeads={userLeads.data} setLeads={setLeads} searchUserLead={searchUserLead} setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}  />}>
         </Route>
+        <Route path='/about'>
+          <About />
+        </Route> 
         <Route
           path='/lead-edit'
-          render={(rp) => <Form selectedLead={selectedLead} /> }>
+          render={(rp) => <Form selectedLead={selectedLead}/> }>
         </Route>
       </Switch>
-      <About />
     </div>
   );
 }
