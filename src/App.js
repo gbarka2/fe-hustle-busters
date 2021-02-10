@@ -16,6 +16,7 @@ import User from './pages/UserReg'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 import UserReg from './pages/UserReg';
+import Form from './components/Form';
 library.add(faEllipsisH)
 
 
@@ -24,7 +25,6 @@ function App() {
 
   const url = "https://hustle-busters.herokuapp.com"
   // const url = "http://localhost:4000"
-
 
   //STATES
   const [leads, setLeads] = React.useState([])
@@ -37,6 +37,7 @@ function App() {
   //new user registration form
   const [regData, setRegData] = React.useState()
 
+
   //EMPTY USER
   const emptyUser = {
       firstName: "",
@@ -45,6 +46,29 @@ function App() {
       userName: "",
       password: ""
   }
+
+  const emptyLead = {
+    contactName: "",
+    companyName: "",
+    position: "",
+    phone: "",
+    email: "",
+    status: "",
+    active: true,
+    estimatedRevenue: "",
+    actualRevenue: ""
+  }
+  //STATES
+  const [leads, setLeads] = React.useState([])
+  const [divisions, setDivisions] = React.useState([])
+  const [searchDivision, setSearchDivision] = React.useState("")
+  const [searchUserLead, setSearchUserLead] = React.useState("")
+  const [userLeads, setUserLeads] = React.useState([])
+  const [searchAllLeads, setSearchAllLeads] = React.useState([])
+  const [selectedLead, setSelectedLead] = React.useState(emptyLead)
+  //new user registration form
+  const [regData, setRegData] = React.useState()
+
 
   //CREATE USER
   const createUser = (newUser) => {
@@ -56,7 +80,6 @@ function App() {
         body: JSON.stringify(newUser)
     })
     }
-
   
   
   //GET LEADS
@@ -94,7 +117,6 @@ React.useEffect(() => {
   getDivisions();
 }, []);
 
-
 const getLeadByCompanyNameUser = (searchUserLead) => {
   console.log('app', searchUserLead)
   fetch(url + '/leads/name/' + searchUserLead)
@@ -102,6 +124,20 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
   .then((data) => {
     setUserLeads(data)
     console.log('data', data.data)
+  })
+}
+
+
+const selectLead = (lead) => {
+  setSelectedLead(lead)
+}
+
+const deleteLead = (lead) => {
+  fetch(url + '/leads/' + lead._id, {
+    method: "delete"
+  })
+  .then((data) => {
+    getLeads(data)
   })
 }
 
@@ -122,11 +158,11 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
         <Route
           path='/division-leads'
           render={(rp) => <Division 
-          {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision} setDivisions={setDivisions} />}/>
+          {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision} setDivisions={setDivisions} selectLead={selectLead} emptyLead={emptyLead} />}/>
         
         <Route
           path='/all-leads'
-          render={(rp) => <Company leads={leads}/>}>
+          render={(rp) => <Company leads={leads} searchAllLeads={searchAllLeads} setSearchAllLeads={setSearchAllLeads} setSelectedLead={setSelectedLead} selectedLead={selectedLead} selectLead={selectLead} deleteLead={deleteLead} />}>
         </Route>
         <Route
           path='/my-profile'
@@ -135,6 +171,9 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
         </Route>
         <Route path='/about'>
           <About />
+        <Route
+          path='/lead-edit'
+          render={(rp) => <Form selectedLead={selectedLead} /> }>
         </Route>
       </Switch>
     </div>
