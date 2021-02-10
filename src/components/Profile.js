@@ -50,7 +50,7 @@ const Profile = (props) => {
   
   const loading = <h1>Hustling...</h1>
 
-  return user ? loaded() : loading
+  return user.leads ? loaded() : loading
 }
 
 export default Profile
