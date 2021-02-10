@@ -1,6 +1,7 @@
 import React from "react"
 
 const Search = (props) => {
+
     const handleChange = (event) => {
         event.preventDefault()
         props.setSearchDivision(event.target.value)

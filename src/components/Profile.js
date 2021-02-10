@@ -48,6 +48,7 @@ const Profile = (props) => {
           props.userLeads ? props.userLeads.map((lead, index) => (
             <Lead lead={lead} key={index} />
           ))        
+
           : user.leads.map((lead, index) => (
             <Lead lead={lead} key={index} />
           ))} 
