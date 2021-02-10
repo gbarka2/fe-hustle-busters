@@ -25,7 +25,7 @@ const Search = (props) => {
                     name="searchbox"
                     // value="blank"
                     placeholder={props.placeholder}
-                    onChange={handleChange} 
+                    onChange={props.handleChange} 
                 />
                 <input type="submit" value="Submit"/>
             </form>
