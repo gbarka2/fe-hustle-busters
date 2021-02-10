@@ -22,21 +22,8 @@ library.add(faEllipsisH)
 
 function App() {
 
-
   const url = "https://hustle-busters.herokuapp.com"
   // const url = "http://localhost:4000"
-
-  //STATES
-  const [leads, setLeads] = React.useState([])
-  const [divisions, setDivisions] = React.useState([])
-  const [searchDivision, setSearchDivision] = React.useState("")
-
-  const [searchUserLead, setSearchUserLead] = React.useState("")
-  const [userLeads, setUserLeads] = React.useState([])
-
-  //new user registration form
-  const [regData, setRegData] = React.useState()
-
 
   //EMPTY USER
   const emptyUser = {
