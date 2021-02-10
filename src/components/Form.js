@@ -1,60 +1,80 @@
 import React from 'react'
 
 const Form = (props) => {
-  console.log('props from form', props)
-  console.log("selectedLead", props.selectedLead)
+
+  console.log('form props-', props)
+
+  //STATE FOR THE FORM
+  const [formData, setFormData] = React.useState(props.selectedLead)
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    props.handleSubmit(formData)
+    props.history.push('/my-profile')
+  }
+
+  const handleChange = (event) => {
+    setFormData({...formData, [event.target.name]: event.target.value})
+  }
+
   return (
     <div className="form-div">
-      <form 
-      // onSubmit="blank"
-      >
+      <form onSubmit={handleSubmit}>
+        <label>Company Name</label>
         <input 
           type="text"
           name="companyName"
-          placeholder={props.selectedLead.companyName}
-          // onChange="blank"
+          value={formData.companyName}
+          onChange={handleChange}
         />
+        <label>Contact Name</label>
         <input 
           type="text"
           name="contactName"
-          placeholder="Contact Name"
-          // onChange="blank"
+          value={formData.contactName}
+          onChange={handleChange}
         />
+        <label>Phone</label>
         <input 
           type="text"
           name="phone"
-          placeholder="Phone"
-                    // onChange="blank"
+          value={formData.phone}
+          onChange={handleChange}
         />
+        <label>Email</label>
         <input 
-          type="text"
+          type="email"
           name="email"
-          placeholder="Email"
-                    // onChange="blank" 
-        />        
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <label>Email</label>        
         <input 
           type="text"
           name="status"
-          placeholder="Status"
-                    // onChange="blank" 
-        />        
+          value={formData.status}
+          onChange={handleChange}
+        /> 
+        <label>Active</label>         
         <input 
           type="text"
           name="active"
-          placeholder="Active"
-                    // onChange="blank"  
+          value={formData.active}
+          onChange={handleChange}
         />
+        <label>Estimated Revenue</label>  
         <input 
           type="number"
           name="estimatedRevenue"
-          placeholder="Estimated Revenue"
-                    // onChange="blank"  
+          value={formData.estimatedRevenue}
+          onChange={handleChange}
         />
+        <label>Actual Revenue</label>  
         <input 
           type="number"
           name="actualRevenue"
-          placeholder="Actual Revenue"
-                    // onChange="blank"  
+          value={formData.actualRevenue}
+          onChange={handleChange}
         />
         <input type="submit" value="Submit" />
       </form>

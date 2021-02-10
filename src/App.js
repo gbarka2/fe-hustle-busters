@@ -22,7 +22,6 @@ library.add(faEllipsisH)
 
 function App() {
 
-
   const url = "https://hustle-busters.herokuapp.com"
   // const url = "http://localhost:4000"
 
@@ -35,6 +34,7 @@ function App() {
       password: ""
   }
 
+  //EMPTY LEAD
   const emptyLead = {
     contactName: "",
     companyName: "",
@@ -83,13 +83,13 @@ function App() {
   }, [])
 
   //GET DIVISIONS
-const getDivisions = () => {
-  fetch(url + '/divisions')
-  .then((response) => response.json())
-  .then((data) => {
-    setDivisions(data)
-  })
-}
+  const getDivisions = () => {
+    fetch(url + '/divisions')
+    .then((response) => response.json())
+    .then((data) => {
+      setDivisions(data)
+    })
+  }
 
 //GET DIVISIONS BY NAME
 const getDivisionByName = (searchDivision) => {
@@ -104,31 +104,46 @@ React.useEffect(() => {
   getDivisions();
 }, []);
 
-const getLeadByCompanyNameUser = (searchUserLead) => {
-  console.log('app', searchUserLead)
-  fetch(url + '/leads/name/' + searchUserLead)
-  .then(response => response.json())
-  .then((data) => {
-    setUserLeads(data)
-    console.log('data', data.data)
-  })
-}
+  //GET LEADS BY COMPANY
+  const getLeadByCompanyNameUser = (searchUserLead) => {
+    console.log('app', searchUserLead)
+    fetch(url + '/leads/name/' + searchUserLead)
+    .then(response => response.json())
+    .then((data) => {
+      setUserLeads(data)
+      console.log('data', data.data)
+    })
+  }
+
+  //PASSING LEAD SATE TO FUNCTION
+  const selectLead = (lead) => {
+    setSelectedLead(lead)
+  }
+
+  //UPDATE AN EXISTING LEAD
+  const handleUpdate = (lead) => {
+    fetch(url + '/leads/' + lead._id, {
+      methods: "put",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(lead)
+    })
+    .then(()=>{
+      getLeads()
+    })
+  }
 
 
-const selectLead = (lead) => {
-  setSelectedLead(lead)
-}
-
-const deleteLead = (lead) => {
-  console.log('delete', lead)
-  fetch(url + '/leads/' + lead._id, {
-    method: "delete"
-  })
-  // .then(() => {
-  //   getLeads()
-  // })
-}
-
+  //DELETE A LEAD
+  const deleteLead = (lead) => {
+    fetch(url + '/leads/' + lead._id, {
+      method: "delete"
+    })
+    .then((data) => {
+      getLeads(data)
+    })
+  }
 
   return (
     <div>
@@ -141,28 +156,50 @@ const deleteLead = (lead) => {
         </Route>
         <Route
           path='/user-registration'
-          render={(rp) => <UserReg {...rp} user={emptyUser} handleSubmit={createUser} />}>
+          render={(rp) => <UserReg {...rp} 
+          user={emptyUser} 
+          handleSubmit={createUser} />}>
         </Route>
         <Route
           path='/division-leads'
-          render={(rp) => <Division 
-          {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision} setDivisions={setDivisions} selectLead={selectLead} emptyLead={emptyLead} />}/>
+          render={(rp) => <Division {...rp} 
+          divisions={divisions.data} 
+          leads={leads.data} 
+          getDivisionByName={getDivisionByName} 
+          searchDivision= {searchDivision} 
+          setSearchDivision={setSearchDivision} 
+          setDivisions={setDivisions} 
+          selectLead={selectLead} 
+          emptyLead={emptyLead} />}/>
         
         <Route
           path='/all-leads'
-          render={(rp) => <Company leads={leads} searchAllLeads={searchAllLeads} setSearchAllLeads={setSearchAllLeads} setSelectedLead={setSelectedLead} selectedLead={selectedLead} selectLead={selectLead} deleteLead={deleteLead} />}>
+          render={(rp) => <Company 
+          leads={leads} 
+          searchAllLeads={searchAllLeads} 
+          setSearchAllLeads={setSearchAllLeads} 
+          setSelectedLead={setSelectedLead} 
+          selectedLead={selectedLead} 
+          selectLead={selectLead} 
+          deleteLead={deleteLead} />}>
         </Route>
         <Route
           path='/my-profile'
-          render={(rp) => <Profile 
-          userLeads={userLeads.data} setLeads={setLeads} searchUserLead={searchUserLead} setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}  />}>
+          render={(rp) => <Profile {...rp}
+          userLeads={userLeads.data} 
+          setLeads={setLeads} 
+          searchUserLead={searchUserLead} 
+          setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}
+          handleSubmit={handleUpdate}/>}>
         </Route>
         <Route path='/about'>
           <About />
-        </Route>
+        </Route> 
         <Route
           path='/lead-edit'
-          render={(rp) => <Form selectedLead={selectedLead} /> }>
+          render={(rp) => <Form {...rp} 
+          selectedLead={selectedLead} 
+          handleSubmit={handleUpdate}/> }>
         </Route>
       </Switch>
     </div>

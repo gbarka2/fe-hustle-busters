@@ -2,16 +2,10 @@ import React from 'react'
 import Form from './Form'
 import {Link} from 'react-router-dom'
 
-const Lead = (props) => {
-  console.log(props)
-  // props.setSelectedLead(props.emptyLead)
-  console.log(props.selectedLead)
 
-  const handleEditClick = (event) => {
-    props.selectLead(props.lead)
-    // props.setSelectedLead(props.lead)
-    props.history.push('/lead-edit')
-  }
+const Lead = (props,) => {
+  console.log('lead props-',props)
+
 
   // const handleDeleteClick = (event) => {
   //   console.log('handledeleteclick', props.lead._id)
@@ -24,7 +18,7 @@ const Lead = (props) => {
         <p>{props.lead.companyName}</p>
         <div>
           <Link to='/lead-edit'>
-            <button onClick={handleEditClick}>
+            <button onClick={props.handleSubmit}>
               Edit Lead
             </button>
           </Link>
