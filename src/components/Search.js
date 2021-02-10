@@ -2,23 +2,23 @@ import React from "react"
 
 const Search = (props) => {
 
-    const handleChange = (event) => {
-        event.preventDefault()
-        props.setSearchDivision(event.target.value)
-        // props.setDivisions()
-        // console.log(event.target.value)
-    }
+    // const handleChange = (event) => {
+    //     event.preventDefault()
+    //     props.setSearchDivision(event.target.value)
+    //     // props.setDivisions()
+    //     // console.log(event.target.value)
+    // }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        if (props.searchDivision !== "") {
-            props.getDivisionByName(props.searchDivision)
-        }
-    }
+    // const handleSubmit = (event) => {
+    //     event.preventDefault()
+    //     if (props.searchDivision !== "") {
+    //         props.getDivisionByName(props.searchDivision)
+    //     }
+    // }
 
     return(
         <div className="search-div">Search {props.value}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={props.handleSubmit}>
 
                 <input 
                     type="text"
