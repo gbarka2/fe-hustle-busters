@@ -27,6 +27,7 @@ function App() {
   const [divisions, setDivisions] = React.useState([])
   const [searchDivision, setSearchDivision] = React.useState("")
   const [searchUserLead, setSearchUserLead] = React.useState("")
+  const [userLeads, setUserLeads] = React.useState([])
 
   const getLeads = () => {
     fetch(url + "/leads")
@@ -62,10 +63,12 @@ React.useEffect(() => {
 }, []);
 
 const getLeadByCompanyNameUser = (searchUserLead) => {
-  fetch(url + '/usernames/name/' + searchUserLead)
+  console.log('app', searchUserLead)
+  fetch(url + '/leads/name/' + searchUserLead)
   .then(response => response.json())
   .then((data) => {
-    setLeads(data)
+    setUserLeads(data)
+    console.log('data', data.data)
   })
 }
 
@@ -93,7 +96,8 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
         </Route>
         <Route
           path='/my-profile'
-          render={(rp) => <Profile searchUserLead={searchUserLead} setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}  />}>
+          render={(rp) => <Profile 
+          userLeads={userLeads.data} setLeads={setLeads} searchUserLead={searchUserLead} setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}  />}>
         </Route>
       </Switch>
       <About />
