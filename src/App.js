@@ -28,7 +28,6 @@ function App() {
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
   const [searchDivision, setSearchDivision] = React.useState("")
-<<<<<<< HEAD
   const [searchUserLead, setSearchUserLead] = React.useState("")
   const [userLeads, setUserLeads] = React.useState([])
   const [searchAllLeads, setSearchAllLeads] = React.useState([])
