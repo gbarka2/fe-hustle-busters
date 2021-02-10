@@ -24,13 +24,42 @@ function App() {
   const url = "https://hustle-busters.herokuapp.com"
   // const url = "http://localhost:4000"
 
+  //STATES
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
   const [searchDivision, setSearchDivision] = React.useState("")
+<<<<<<< HEAD
   const [searchUserLead, setSearchUserLead] = React.useState("")
   const [userLeads, setUserLeads] = React.useState([])
   const [searchAllLeads, setSearchAllLeads] = React.useState([])
 
+  //new user registration form
+  const [regData, setRegData] = React.useState()
+
+  //EMPTY USER
+  const emptyUser = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      userName: "",
+      password: ""
+  }
+
+  //CREATE USER
+  const createUser = (newUser) => {
+    fetch(url + "/usernames/", {
+        method: "post",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(newUser)
+    })
+    }
+
+
+  
+  
+  //GET LEADS
   const getLeads = () => {
     fetch(url + "/leads")
     .then(response => response.json())
@@ -43,7 +72,7 @@ function App() {
     getLeads()
   }, [])
 
-
+  //GET DIVISIONS
 const getDivisions = () => {
   fetch(url + '/divisions')
   .then((response) => response.json())
@@ -52,6 +81,7 @@ const getDivisions = () => {
   })
 }
 
+//GET DIVISIONS BY NAME
 const getDivisionByName = (searchDivision) => {
   fetch(url + '/divisions/name/' + searchDivision)
   .then(response => response.json())
@@ -85,7 +115,7 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
         </Route>
         <Route
           path='/user-registration'
-          render={(rp) => <UserReg />}>
+          render={(rp) => <UserReg {...rp} user={emptyUser} handleSubmit={createUser} />}>
         </Route>
         <Route
           path='/division-leads'
