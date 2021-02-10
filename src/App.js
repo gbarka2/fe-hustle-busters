@@ -24,17 +24,6 @@ function App() {
   const url = "https://hustle-busters.herokuapp.com"
   // const url = "http://localhost:4000"
 
-  //STATES
-  const [leads, setLeads] = React.useState([])
-  const [divisions, setDivisions] = React.useState([])
-  const [searchDivision, setSearchDivision] = React.useState("")
-  const [searchUserLead, setSearchUserLead] = React.useState("")
-  const [userLeads, setUserLeads] = React.useState([])
-  const [searchAllLeads, setSearchAllLeads] = React.useState([])
-
-  //new user registration form
-  const [regData, setRegData] = React.useState()
-
   //EMPTY USER
   const emptyUser = {
       firstName: "",
@@ -43,6 +32,29 @@ function App() {
       userName: "",
       password: ""
   }
+
+  const emptyLead = {
+    contactName: "",
+    companyName: "",
+    position: "",
+    phone: "",
+    email: "",
+    status: "",
+    active: true,
+    estimatedRevenue: "",
+    actualRevenue: ""
+  }
+  //STATES
+  const [leads, setLeads] = React.useState([])
+  const [divisions, setDivisions] = React.useState([])
+  const [searchDivision, setSearchDivision] = React.useState("")
+  const [searchUserLead, setSearchUserLead] = React.useState("")
+  const [userLeads, setUserLeads] = React.useState([])
+  const [searchAllLeads, setSearchAllLeads] = React.useState([])
+  const [selectedLead, setSelectedLead] = React.useState(emptyLead)
+  //new user registration form
+  const [regData, setRegData] = React.useState()
+
 
   //CREATE USER
   const createUser = (newUser) => {
@@ -54,8 +66,6 @@ function App() {
         body: JSON.stringify(newUser)
     })
     }
-
-
   
   
   //GET LEADS
@@ -103,6 +113,20 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
   })
 }
 
+const selectLead = (lead) => {
+  setSelectedLead(lead)
+}
+
+const deleteLead = (lead) => {
+  fetch(url + '/leads/' + lead._id, {
+    method: "delete"
+  })
+  .then((data) => {
+    getLeads(data)
+  })
+}
+
+
   return (
     <div>
       <Navigation />
@@ -119,11 +143,11 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
         <Route
           path='/division-leads'
           render={(rp) => <Division 
-          {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision} setDivisions={setDivisions} />}/>
+          {...rp} divisions={divisions.data} leads={leads.data} getDivisionByName={getDivisionByName} searchDivision= {searchDivision} setSearchDivision={setSearchDivision} setDivisions={setDivisions} selectLead={selectLead} emptyLead={emptyLead} />}/>
         
         <Route
           path='/all-leads'
-          render={(rp) => <Company leads={leads} searchAllLeads={searchAllLeads} setSearchAllLeads={setSearchAllLeads} />}>
+          render={(rp) => <Company leads={leads} searchAllLeads={searchAllLeads} setSearchAllLeads={setSearchAllLeads} setSelectedLead={setSelectedLead} selectedLead={selectedLead} selectLead={selectLead} deleteLead={deleteLead} />}>
         </Route>
         <Route
           path='/my-profile'
@@ -132,7 +156,7 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
         </Route>
         <Route
           path='/lead-edit'
-          render={(rp) => <Form /> }>
+          render={(rp) => <Form selectedLead={selectedLead} /> }>
         </Route>
       </Switch>
       <About />

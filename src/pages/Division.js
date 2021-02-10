@@ -30,7 +30,7 @@ const Division = (props) => {
           <div className="leads-div">
           {division.leads.map((lead, index) => (
             <div>
-              <Lead lead={lead} key={index}/>
+              <Lead lead={lead} key={index} selectLead={props.selectLead} emptyLead={props.emptyLead}/>
             </div>
           ))}
         </div>

@@ -2,25 +2,32 @@ import React from 'react'
 import Form from './Form'
 import {Link} from 'react-router-dom'
 
-const Lead = (props) => {
+const Lead = (props,) => {
+  console.log(props)
+  // props.setSelectedLead(props.emptyLead)
+  console.log(props.selectedLead)
+
+  const handleEditClick = (event) => {
+    console.log('handle click', props.lead)
+    event.preventDefault()
+    props.selectLead(props.lead)
+    // props.setSelectedLead(props.lead)
+    props.history.push('/lead-edit')
+  }
 
   return (
     <div className="lead-div">
         <p>{props.lead.companyName}</p>
         <div>
-          <Link to="lead-edit"><button>Edit Lead</button></Link>
-          <button>See Profile</button>
+          <Link to='/lead-edit'>
+            <button onClick={handleEditClick}>
+              Edit Lead
+            </button>
+          </Link>
+          {/* <button>See Profile</button> */}
+          <button onClick={props.deleteLead}>Delete Lead</button>
         </div>
-        {/* <p>{props.lead.owner}</p>
-        <p>{props.lead.contactName}</p>
-        <p>{props.lead.email}</p>
-        <p>{props.lead.active}</p>
-        <p>{props.lead.status}</p>
-        <p>{props.lead.division}</p>
-        <p>{props.lead.estimatedRevenue}</p>
-        <p>{props.lead.actualRevenue}</p>
-        <p>{props.lead._id}</p> */}
-      {/* <Form /> */}
+
     </div>
   )
 }
