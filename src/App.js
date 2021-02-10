@@ -20,13 +20,20 @@ library.add(faEllipsisH)
 
 
 function App() {
+
+
   const url = "https://hustle-busters.herokuapp.com"
   // const url = "http://localhost:4000"
+
 
   //STATES
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
   const [searchDivision, setSearchDivision] = React.useState("")
+
+  const [searchUserLead, setSearchUserLead] = React.useState("")
+  const [userLeads, setUserLeads] = React.useState([])
+
   //new user registration form
   const [regData, setRegData] = React.useState()
 
@@ -71,22 +78,15 @@ const getDivisions = () => {
   .then((response) => response.json())
   .then((data) => {
     setDivisions(data)
-    // console.log(divisions)
   })
 }
 
 //GET DIVISIONS BY NAME
 const getDivisionByName = (searchDivision) => {
-  console.log('searched division', searchDivision)
   fetch(url + '/divisions/name/' + searchDivision)
-
   .then(response => response.json())
   .then((data) => {
     setDivisions(data)
-    console.log('getDivisionByName data', data)
-    // console.log('getDivisionByName divisions', divisions)
-
-    // getDivisions()
   })
 }
 
@@ -94,9 +94,17 @@ React.useEffect(() => {
   getDivisions();
 }, []);
 
-// React.useEffect(() => {
-//   getDivisionByName()
-// }, [])
+
+const getLeadByCompanyNameUser = (searchUserLead) => {
+  console.log('app', searchUserLead)
+  fetch(url + '/leads/name/' + searchUserLead)
+  .then(response => response.json())
+  .then((data) => {
+    setUserLeads(data)
+    console.log('data', data.data)
+  })
+}
+
 
   return (
     <div>
@@ -122,7 +130,8 @@ React.useEffect(() => {
         </Route>
         <Route
           path='/my-profile'
-          render={(rp) => <Profile />}>
+          render={(rp) => <Profile 
+          userLeads={userLeads.data} setLeads={setLeads} searchUserLead={searchUserLead} setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}  />}>
         </Route>
       </Switch>
       <About />
