@@ -22,7 +22,7 @@ const Division = (props) => {
   const loaded = () => (
     <>
     {/* this is right */}
-      <Search value="Divisions" placeholder="Enter Division Here" handleChange={handleDivisionChange} handleSubmit={handleDivisionSubmit} />
+      {/* <Search value="Divisions" placeholder="Enter Division Here" handleChange={handleDivisionChange} handleSubmit={handleDivisionSubmit} /> */}
       <div className="division-div">
       {divisions.map((division) => (
         <article key={division._id}>

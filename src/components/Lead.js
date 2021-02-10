@@ -9,7 +9,7 @@ const Lead = (props,) => {
 
   const handleEditClick = (event) => {
     console.log('handle click', props.lead)
-    event.preventDefault()
+
     props.selectLead(props.lead)
     // props.setSelectedLead(props.lead)
     props.history.push('/lead-edit')
