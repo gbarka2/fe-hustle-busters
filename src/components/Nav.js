@@ -34,7 +34,7 @@ const Navigation = (props) => {
                         <Link to ="/">Logout</Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link to="/About">About</Link>
+                        <Link to="/about">About</Link>
                     </Nav.Link>
                 </Nav>
             </Navbar.Collapse>
