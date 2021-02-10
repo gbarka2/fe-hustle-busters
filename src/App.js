@@ -34,8 +34,7 @@ function App() {
   const [searchUserLead, setSearchUserLead] = React.useState("")
   const [userLeads, setUserLeads] = React.useState([])
   const [searchAllLeads, setSearchAllLeads] = React.useState([])
-  const [searchUserLead, setSearchUserLead] = React.useState("")
-  const [userLeads, setUserLeads] = React.useState([])
+
 
 
   //new user registration form
