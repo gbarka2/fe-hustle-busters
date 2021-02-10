@@ -8,7 +8,6 @@ const Lead = (props) => {
   console.log(props.selectedLead)
 
   const handleEditClick = (event) => {
-    // console.log('handle click', props.lead)
     props.selectLead(props.lead)
     // props.setSelectedLead(props.lead)
     props.history.push('/lead-edit')
