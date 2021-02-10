@@ -68,8 +68,7 @@ function App() {
         body: JSON.stringify(newUser)
     })
     }
-  
-  
+
   //GET LEADS
   const getLeads = () => {
     fetch(url + "/leads")
@@ -135,6 +134,7 @@ React.useEffect(() => {
     })
   }
 
+
   //DELETE A LEAD
   const deleteLead = (lead) => {
     fetch(url + '/leads/' + lead._id, {
@@ -144,7 +144,6 @@ React.useEffect(() => {
       getLeads(data)
     })
   }
-
 
   return (
     <div>

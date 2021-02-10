@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Form = (props) => {
+
   console.log('form props-', props)
 
   //STATE FOR THE FORM
