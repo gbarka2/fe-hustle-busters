@@ -5,7 +5,7 @@ import Search from '../components/Search'
 
 const Division = (props) => {
   const { divisions } = props
-
+  
   const handleDivisionChange = (event) => {
     event.preventDefault()
     props.setSearchDivision(event.target.value)
@@ -21,6 +21,11 @@ const Division = (props) => {
   const loaded = () => (
     <>
       <Search value="Divisions" placeholder="Enter Division Here" handleChange={handleDivisionChange} handleSubmit={handleDivisionSubmit} />
+
+  const loaded = () => (
+    <>
+      <Search value="Divisions" placeholder="Enter Division Here" getDivisionByName={props.getDivisionByName} searchDivision={props.searchDivision} setSearchDivision={props.setSearchDivision} setDivisions={props.setDivisions} />
+
       <div className="division-div">
       {divisions.map((division) => (
         <article key={division._id}>
