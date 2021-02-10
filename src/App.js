@@ -21,8 +21,11 @@ library.add(faEllipsisH)
 
 
 function App() {
+
+
   const url = "https://hustle-busters.herokuapp.com"
   // const url = "http://localhost:4000"
+
 
   //STATES
   const [leads, setLeads] = React.useState([])
@@ -31,6 +34,9 @@ function App() {
   const [searchUserLead, setSearchUserLead] = React.useState("")
   const [userLeads, setUserLeads] = React.useState([])
   const [searchAllLeads, setSearchAllLeads] = React.useState([])
+  const [searchUserLead, setSearchUserLead] = React.useState("")
+  const [userLeads, setUserLeads] = React.useState([])
+
 
   //new user registration form
   const [regData, setRegData] = React.useState()
@@ -55,9 +61,6 @@ function App() {
     })
     }
 
-
-  
-  
   //GET LEADS
   const getLeads = () => {
     fetch(url + "/leads")
@@ -93,6 +96,7 @@ React.useEffect(() => {
   getDivisions();
 }, []);
 
+
 const getLeadByCompanyNameUser = (searchUserLead) => {
   console.log('app', searchUserLead)
   fetch(url + '/leads/name/' + searchUserLead)
@@ -102,6 +106,7 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
     console.log('data', data.data)
   })
 }
+
 
   return (
     <div>

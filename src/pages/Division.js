@@ -5,7 +5,7 @@ import Search from '../components/Search'
 
 const Division = (props) => {
   const { divisions } = props
-
+  
   const handleDivisionChange = (event) => {
     event.preventDefault()
     props.setSearchDivision(event.target.value)
