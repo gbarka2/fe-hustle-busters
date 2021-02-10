@@ -12,33 +12,30 @@ const UserReg = (props) => {
     //click even handler for sending data to backend
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleSubmit(regData)
-        props.history.push("/")
-        /////save below for post MVP///////
-        // if (regData.password === regData.confirmPassword){
-        //     createUser()
-        //     props.history.push('/')
-        // } else {
-        //     props.history.push('/user-registration')
-        // }
+        if (regData.password === regData.confirmPassword){
+            props.handleSubmit(regData)
+            props.history.push('/')
+            alert("You're In! Login with your username and password on the next page.")
+        } else {
+            props.history.push('/user-registration')
+            alert('Passwords didnt match, try again.')
+            setRegData("")
+        }
     }
     
     //Capture data in handle change
     const handleChange = (event) => {
-        setRegData({...regData, [event.target.name]: event.target.value })
+        setRegData({...regData, [event.target.id]: event.target.value })
     }
 
-    //If data exists ...
-    // const createUser = (newUser) => {
+    //If data exists ... POST MVP
     //     if (regData.firstName.length &&
     //         regData.lastName.length &&
     //         regData.email.length &&
     //         regData.userName.length &&
     //         regData.password.length){
+    // if statements on right after the other - line 15
         
-
-
-
 
     return(
         <div className="userReg-div">
