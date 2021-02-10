@@ -1,53 +1,62 @@
 import React from 'react'
 
 const Form = (props) => {
-
+  console.log('props from form', props)
+  console.log(props.selectedLead)
   return (
     <div className="form-div">
-      <form onSubmit="blank">
+      <form 
+      // onSubmit="blank"
+      >
         <input 
           type="text"
           name="companyName"
-          value="blank"
-          onChange="blank"
+          placeholder="Company Name"
+          // onChange="blank"
         />
         <input 
           type="text"
           name="contactName"
-          value="blank"
-          onChange="blank" 
-        />
-        <input 
-            type="text"
-            name="contactTitle"
-            value="blank"
-            onChange="blank" 
+          placeholder="Contact Name"
+          // onChange="blank"
         />
         <input 
           type="text"
           name="phone"
-          value="blank"
-          onChange="blank"
+          placeholder="Phone"
+                    // onChange="blank"
         />
         <input 
           type="text"
           name="email"
-          value="blank"
-          onChange="blank" 
-        />
+          placeholder="Email"
+                    // onChange="blank" 
+        />        
         <input 
           type="text"
+          name="status"
+          placeholder="Status"
+                    // onChange="blank" 
+        />        
+        <input 
+          type="text"
+          name="active"
+          placeholder="Active"
+                    // onChange="blank"  
+        />
+        <input 
+          type="number"
           name="estimatedRevenue"
-          value="blank"
-          onChange="blank"  
+          placeholder="Estimated Revenue"
+                    // onChange="blank"  
         />
         <input 
-          type="text"
-          name="companyName"
-          value="blank"
-          onChange="blank"  
+          type="number"
+          name="actualRevenue"
+          placeholder="Actual Revenue"
+                    // onChange="blank"  
         />
-        <input type="submit" value="blank" />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   )

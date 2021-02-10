@@ -5,7 +5,7 @@ import Search from '../components/Search'
 
 const Division = (props) => {
   const { divisions } = props
-  
+
   const handleDivisionChange = (event) => {
     event.preventDefault()
     props.setSearchDivision(event.target.value)
@@ -18,6 +18,7 @@ const Division = (props) => {
     }
   }
 
+
   const loaded = () => (
     <>
       <Search value="Divisions" placeholder="Enter Division Here" handleChange={handleDivisionChange} handleSubmit={handleDivisionSubmit} />
@@ -25,7 +26,6 @@ const Division = (props) => {
   const loaded = () => (
     <>
       <Search value="Divisions" placeholder="Enter Division Here" getDivisionByName={props.getDivisionByName} searchDivision={props.searchDivision} setSearchDivision={props.setSearchDivision} setDivisions={props.setDivisions} />
-
       <div className="division-div">
       {divisions.map((division) => (
         <article key={division._id}>
@@ -34,7 +34,9 @@ const Division = (props) => {
           <img src={division.img} alt='' />
           <div className="leads-div">
           {division.leads.map((lead, index) => (
-            <Lead lead={lead} key={index}/>
+            <div>
+              <Lead lead={lead} key={index} selectLead={props.selectLead} emptyLead={props.emptyLead}/>
+            </div>
           ))}
         </div>
         </article>
