@@ -1,12 +1,16 @@
 import React from 'react'
 import Form from './Form'
+import {Link} from 'react-router-dom'
 
 const Lead = (props) => {
 
   return (
     <div className="lead-div">
         <p>{props.lead.companyName}</p>
-        <button>See Profile</button>
+        <div>
+          <Link to="lead-edit"><button>Edit Lead</button></Link>
+          <button>See Profile</button>
+        </div>
         {/* <p>{props.lead.owner}</p>
         <p>{props.lead.contactName}</p>
         <p>{props.lead.email}</p>

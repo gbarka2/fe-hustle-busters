@@ -20,7 +20,7 @@ const Division = (props) => {
 
   const loaded = () => (
     <>
-      <Search value="Divisions" placeholder="Enter Division Here" handleChange={handleDivisionChange} handleSubmit={handleDivisionSubmit} />
+      {/* <Search value="Divisions" placeholder="Enter Division Here" handleChange={handleDivisionChange} handleSubmit={handleDivisionSubmit} /> */}
       <div className="division-div">
       {divisions.map((division) => (
         <article key={division._id}>
@@ -29,7 +29,9 @@ const Division = (props) => {
           <img src={division.img} alt='' />
           <div className="leads-div">
           {division.leads.map((lead, index) => (
-            <Lead lead={lead} key={index}/>
+            <div>
+              <Lead lead={lead} key={index}/>
+            </div>
           ))}
         </div>
         </article>
