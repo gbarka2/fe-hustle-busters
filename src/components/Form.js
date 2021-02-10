@@ -8,46 +8,52 @@ const Form = (props) => {
         <input 
           type="text"
           name="companyName"
-          value="blank"
+          placeholder="Company Name"
           onChange="blank"
         />
         <input 
           type="text"
           name="contactName"
-          value="blank"
+          placeholder="Contact Name"
           onChange="blank" 
-        />
-        <input 
-            type="text"
-            name="contactTitle"
-            value="blank"
-            onChange="blank" 
         />
         <input 
           type="text"
           name="phone"
-          value="blank"
+          placeholder="Phone"
           onChange="blank"
         />
         <input 
           type="text"
           name="email"
-          value="blank"
+          placeholder="Email"
           onChange="blank" 
-        />
+        />        
         <input 
           type="text"
+          name="status"
+          placeholder="Status"
+          onChange="blank"  
+        />        
+        <input 
+          type="text"
+          name="active"
+          placeholder="Active"
+          onChange="blank"  
+        />
+        <input 
+          type="number"
           name="estimatedRevenue"
-          value="blank"
+          placeholder="Estimated Revenue"
           onChange="blank"  
         />
         <input 
-          type="text"
-          name="companyName"
-          value="blank"
+          type="number"
+          name="actualRevenue"
+          placeholder="Actual Revenue"
           onChange="blank"  
         />
-        <input type="submit" value="blank" />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   )

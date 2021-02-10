@@ -16,6 +16,7 @@ import User from './pages/UserReg'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 import UserReg from './pages/UserReg';
+import Form from './components/Form';
 library.add(faEllipsisH)
 
 
@@ -28,6 +29,7 @@ function App() {
   const [searchDivision, setSearchDivision] = React.useState("")
   const [searchUserLead, setSearchUserLead] = React.useState("")
   const [userLeads, setUserLeads] = React.useState([])
+  const [searchAllLeads, setSearchAllLeads] = React.useState([])
 
   const getLeads = () => {
     fetch(url + "/leads")
@@ -92,12 +94,17 @@ const getLeadByCompanyNameUser = (searchUserLead) => {
         
         <Route
           path='/all-leads'
-          render={(rp) => <Company leads={leads}/>}>
+          render={(rp) => <Company leads={leads} searchAllLeads={searchAllLeads} setSearchAllLeads={setSearchAllLeads} />}>
         </Route>
         <Route
           path='/my-profile'
           render={(rp) => <Profile 
           userLeads={userLeads.data} setLeads={setLeads} searchUserLead={searchUserLead} setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}  />}>
+        </Route>
+        <Route
+          path='/lead-edit'
+          render={(rp) => <Form /> }>
+          
         </Route>
       </Switch>
       <About />
