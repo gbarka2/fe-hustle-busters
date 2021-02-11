@@ -90,7 +90,6 @@ React.useEffect(() => {
 
   //GET LEADS BY COMPANY
   const getLeadByCompanyNameUser = (searchUserLead) => {
-    console.log('app', searchUserLead)
     fetch(url + '/leads/name/' + searchUserLead)
     .then(response => response.json())
     .then((data) => {
@@ -101,7 +100,6 @@ React.useEffect(() => {
 
   //UPDATE AN EXISTING LEAD
   const handleUpdate = (lead) => {
-    console.log('handleupdate', lead._id)
     fetch(url + '/leads/' + lead._id, {
       method: "put",
       headers: {
