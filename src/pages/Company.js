@@ -5,7 +5,7 @@ const Company = (props) => {
 
   return(
       <div className="company-div">
-        <h2 className="company-header">COMPANY Component</h2>
+        <h2 className="company-header">ALL HUSTLES</h2>
         <Leads 
         leads={props.leads} 
         setSelectedLead={props.setSelectedLead} 
