@@ -173,6 +173,11 @@ React.useEffect(() => {
           // selectLead={selectLead} 
           emptyLead={emptyLead} 
           deleteLead={deleteLead}
+          setSelectedLead={setSelectedLead} 
+          selectedLead={selectedLead} 
+          getLeads={getLeads}
+          deleteLead={deleteLead}
+          handleUpdate={handleUpdate}
           />}/>
         
         <Route
@@ -196,6 +201,10 @@ React.useEffect(() => {
           setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}
           handleUpdate={handleUpdate}
           setSelectedLead={setSelectedLead}
+          selectedLead={selectedLead} 
+          getLeads={getLeads}
+          deleteLead={deleteLead}
+          handleUpdate={handleUpdate}
           />}>
         </Route>
         <Route path='/about'>
