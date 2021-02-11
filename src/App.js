@@ -2,7 +2,6 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import React from 'react'
 
-
 //Components & Pages
 import Navigation from './components/Nav'
 import Login from './components/Login'
@@ -46,6 +45,7 @@ function App() {
     estimatedRevenue: "",
     actualRevenue: ""
   }
+
   //STATES
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
@@ -54,10 +54,10 @@ function App() {
   const [userLeads, setUserLeads] = React.useState([])
   const [searchAllLeads, setSearchAllLeads] = React.useState([])
   const [selectedLead, setSelectedLead] = React.useState(emptyLead)
-  //new user registration form
   const [regData, setRegData] = React.useState()
 
   console.log('app selectedlead', selectedLead)
+  
   //CREATE USER
   const createUser = (newUser) => {
     fetch(url + "/usernames/", {
@@ -121,9 +121,10 @@ React.useEffect(() => {
   // }
 
   //UPDATE AN EXISTING LEAD
-  const handleUpdate = (lead) => {
-    console.log('handleupdate', lead._id)
-    fetch(url + '/leads/' + lead._id, {
+
+  const handleUpdate = () => {
+    console.log('handleupdate', selectedLead._id)
+    fetch(url + '/leads/' + selectedLead._id, {
       method: "put",
       headers: {
         "Content-Type": "application/json"

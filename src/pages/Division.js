@@ -25,14 +25,19 @@ const Division = (props) => {
       {/* <Search value="Divisions" placeholder="Enter Division Here" handleChange={handleDivisionChange} handleSubmit={handleDivisionSubmit} /> */}
       <div className="division-div">
       {divisions.map((division) => (
-        <article key={division._id}>
-          <h2>{division.name}</h2>
-          <h3>{division.motto}</h3>
-          <img src={division.img} alt='' />
-          <div className="leads-div">
+        <article className="division-article" key={division._id}>
+          <h2 className="division-h2">{division.name}</h2>
+          <h3 className="division-h3">{division.motto}</h3>
+          <img className="division-img" src={division.img} alt='' />
+          <div className="division-div-div">
           {division.leads.map((lead, index) => (
-            <div>
-              <Lead lead={lead} key={index} emptyLead={props.emptyLead} deleteLead={props.deleteLead} setSelectedLead={props.setSelectedLead}/>
+            <div className="division-div-lead">
+              <Lead 
+                lead={lead} 
+                key={index} 
+                selectLead={props.selectLead} 
+                emptyLead={props.emptyLead} 
+                deleteLead={props.deleteLead}/>
             </div>
           ))}
         </div>
@@ -42,8 +47,7 @@ const Division = (props) => {
 
     </>
   )
-  const loading = <h1>Loading...</h1>
-  
+  const loading = <h2 className="division-h2">Loading...</h2>
   
   return divisions ? loaded() : loading 
 }
