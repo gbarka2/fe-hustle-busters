@@ -9,7 +9,7 @@ const About = (props) => {
         <div className="about-div">
           <h2 className="about-h2">About</h2>
           <p className="about-p">Hustle Busters is a 70's-themed CRM tool built as a group project for General Assembly's Software Engineering Immersive. The backend uses a custom Express database. The user interface was created with React and React-Bootstrap. It currently includes only basic CRUD functionality, but we'll keep working to expand!</p>
-          <Card style={{ width: '18rem' }} 
+          <Card style={{ width: '16rem' }} 
                 className="about-card">
             <Card.Img 
                 variant="top" 
@@ -22,17 +22,17 @@ const About = (props) => {
               </Card.Text>
               <Button 
                 className="about-card-button" 
-                variant="outline-danger" 
+                variant="info" 
                 href="https://github.com/SamanthaSolomon" 
                 target="_blank">GitHub</Button>
               <Button 
                 className="about-card-button" 
-                variant="outline-danger" 
+                variant="info" 
                 href="https://samanthasolomon.github.io/" 
                 target="_blank">Website</Button>
             </Card.Body>
           </Card>
-          <Card style={{ width: '18rem' }} 
+          <Card style={{ width: '16rem' }} 
                 className="about-card">
             <Card.Img 
                 variant="top" 
@@ -44,17 +44,17 @@ const About = (props) => {
               </Card.Text>
               <Button 
                 className="about-card-button" 
-                variant="outline-danger" 
+                variant="info" 
                 href="https://github.com/gbarka2" 
                 target="_blank">GitHub</Button>
               <Button 
                 className="about-card-button" 
-                variant="outline-danger" 
+                variant="info" 
                 href="https://gbarka2.github.io/" 
                 target="_blank">Website</Button>
             </Card.Body>
           </Card>
-          <Card style={{ width: '18rem' }} 
+          <Card style={{ width: '16rem' }} 
                 className="about-card">
             <Card.Img 
                 variant="top" 
@@ -67,12 +67,12 @@ const About = (props) => {
               </Card.Text>
               <Button 
                 className="about-card-button" 
-                variant="outline-danger" 
+                variant="info" 
                 href="https://github.com/blueLotus3" 
                 target="_blank">GitHub</Button>
               <Button 
                 className="about-card-button" 
-                variant="outline-danger" 
+                variant="info" 
                 href="https://bluelotus3.github.io/" 
                 target="_blank">Website</Button>
             </Card.Body>
