@@ -3,26 +3,24 @@ import { Route, Switch } from 'react-router-dom'
 import React from 'react'
 
 //Components & Pages
-import Navigation from './components/Nav'
+import Form from './components/Form';
 import Login from './components/Login'
-import Division from './pages/Division'
-import Company from './pages/Company'
-import About from './pages/About'
+import Navigation from './components/Nav'
 import Profile from './components/Profile'
-import User from './pages/UserReg'
+import About from './pages/About'
+import Company from './pages/Company'
+import Division from './pages/Division'
+import UserReg from './pages/UserReg';
 
 //Initialize FontAwesome Libraries
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
-import UserReg from './pages/UserReg';
-import Form from './components/Form';
 library.add(faEllipsisH)
 
 
 function App() {
 
   const url = "https://hustle-busters.herokuapp.com"
-  // const url = "http://localhost:4000"
 
   //EMPTY USER
   const emptyUser = {
@@ -49,14 +47,9 @@ function App() {
   //STATES
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
-  const [searchDivision, setSearchDivision] = React.useState("")
   const [searchUserLead, setSearchUserLead] = React.useState("")
   const [userLeads, setUserLeads] = React.useState([])
-  const [searchAllLeads, setSearchAllLeads] = React.useState([])
   const [selectedLead, setSelectedLead] = React.useState(emptyLead)
-  const [regData, setRegData] = React.useState()
-
-  console.log('app selectedlead', selectedLead)
   
   //CREATE USER
   const createUser = (newUser) => {
@@ -91,15 +84,6 @@ function App() {
     })
   }
 
-//GET DIVISIONS BY NAME
-const getDivisionByName = (searchDivision) => {
-  fetch(url + '/divisions/name/' + searchDivision)
-  .then(response => response.json())
-  .then((data) => {
-    setDivisions(data)
-  })
-}
-
 React.useEffect(() => {
   getDivisions();
 }, []);
@@ -115,13 +99,7 @@ React.useEffect(() => {
     })
   }
 
-  //PASSING LEAD SATE TO FUNCTION
-  // const selectLead = (lead) => {
-  //   setSelectedLead(lead)
-  // }
-
   //UPDATE AN EXISTING LEAD
-
   const handleUpdate = (lead) => {
     console.log('handleupdate', lead._id)
     fetch(url + '/leads/' + lead._id, {
