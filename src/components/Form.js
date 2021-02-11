@@ -84,7 +84,7 @@ const Form = (props) => {
           value={formData.actualRevenue}
           onChange={handleChange}
         />
-        <input className="form-button" type="submit" value="Submit" />
+        <input className="submit-button" type="submit" value="Submit" />
       </form>
     </div>
   )

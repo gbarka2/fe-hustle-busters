@@ -84,7 +84,7 @@ const UserReg = (props) => {
                     value={regData.confirmPassword}
                     onChange={handleChange}/>
                 <button
-                    className="userReg-button" 
+                    className="submit-button" 
                     type="submit"
                     onClick={handleSubmit}>
                     Register as New User
