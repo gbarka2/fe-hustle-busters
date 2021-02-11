@@ -194,15 +194,11 @@ React.useEffect(() => {
           path='/my-profile'
           render={(rp) => <Profile {...rp}
           userLeads={userLeads.data} 
-          setLeads={setLeads} 
           searchUserLead={searchUserLead} 
           setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}
           handleUpdate={handleUpdate}
           setSelectedLead={setSelectedLead}
-          selectedLead={selectedLead} 
-          getLeads={getLeads}
           deleteLead={deleteLead}
-          handleUpdate={handleUpdate}
           />}>
         </Route>
         <Route path='/about'>
