@@ -23,7 +23,7 @@ const Login = (props) => {
                 onChange=" "  
               />
               <input
-                className="login-button" 
+                className="submit-button" 
                 type="submit" 
                 value="Login"/>
             </form>
