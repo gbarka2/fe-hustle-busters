@@ -8,21 +8,23 @@
   --light-red: #f26249;
   --red: #ec2f3b;
   --aqua: #52b3b6;
+  --blue: #007291;
   --logo: 'Monoton', sans-serif;
   --h2: 'Shrikhand', cursive;
   --h3-p:'Montserrat', sans-serif;
 
 }
 
-div{
+#root{
   background-color: var(--background);
+  height: 1500px;
   /* background-image: ("https://www.muralswallpaper.com/app/uploads/70s-rainbow-wave-retro-wallpaper-mural-Plain-820x532@2x.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center; */
 }
 
-a{
+Link, a{
   text-decoration: none;
   color: none;
   cursor: pointer;
@@ -41,6 +43,10 @@ h2{
 
 }
 
+p{
+  font-family: var(--h3-p)
+}
+
 .submit-button{
   border-radius: 12px;
   border: none;
@@ -49,11 +55,50 @@ h2{
   padding: 15px 30px;
   font-size: 1.3rem;
   font-family: var(--h3-p);
-  font-weight: 700
+  font-weight: 700;
 }
 
+label{
+  font-family: var(--h3-p);
+}
 
+input{
+  border: 2px solid var(--orange);
+  border-radius: 5px;
+}
 
+button{
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-family: var(--h3-p);
+}
+
+/* NAV */
+
+.nav-div{
+  background-color: var(--aqua);
+}
+
+.nav-brand{
+  font-family: var(--logo);
+  /* color: var(--red); */
+}
+
+.nav-link{
+  font-family: var(--h2);
+  /* color: var(--background) */
+}
+
+/* #responsive-navbar-nav{
+  border: 3px;
+  border-color: white;
+}
+
+.navbar-toggler-icon{
+  color: white;
+} */
 
 /* LOGIN COMPONENET  */
 
@@ -62,12 +107,9 @@ h2{
 }
 
 /* LEADS COMPONENT */
-.leads-div {
-  border: black solid 1px;
-}
+
 
 .leads-table-header {
-  border: green solid 1px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -75,7 +117,6 @@ h2{
 }
 
 .lead-div {
-  border: red solid 1px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
