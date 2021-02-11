@@ -121,6 +121,7 @@ React.useEffect(() => {
   // }
 
   //UPDATE AN EXISTING LEAD
+
   const handleUpdate = () => {
     console.log('handleupdate', selectedLead._id)
     fetch(url + '/leads/' + selectedLead._id, {
@@ -128,7 +129,7 @@ React.useEffect(() => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(selectedLead)
+      body: JSON.stringify(lead)
     })
     .then((data)=>{
       getLeads(data)
@@ -173,6 +174,11 @@ React.useEffect(() => {
           // selectLead={selectLead} 
           emptyLead={emptyLead} 
           deleteLead={deleteLead}
+          setSelectedLead={setSelectedLead} 
+          selectedLead={selectedLead} 
+          getLeads={getLeads}
+          deleteLead={deleteLead}
+          handleUpdate={handleUpdate}
           />}/>
         
         <Route
@@ -183,7 +189,6 @@ React.useEffect(() => {
           setSearchAllLeads={setSearchAllLeads} 
           setSelectedLead={setSelectedLead} 
           selectedLead={selectedLead} 
-          // selectLead={selectLead} 
           getLeads={getLeads}
           deleteLead={deleteLead}
           />}>
@@ -195,7 +200,13 @@ React.useEffect(() => {
           setLeads={setLeads} 
           searchUserLead={searchUserLead} 
           setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}
-          handleSubmit={handleUpdate}/>}>
+          handleUpdate={handleUpdate}
+          setSelectedLead={setSelectedLead}
+          selectedLead={selectedLead} 
+          getLeads={getLeads}
+          deleteLead={deleteLead}
+          handleUpdate={handleUpdate}
+          />}>
         </Route>
         <Route path='/about'>
           <About />
@@ -204,7 +215,7 @@ React.useEffect(() => {
           path='/lead-edit'
           render={(rp) => <Form {...rp} 
           selectedLead={selectedLead} 
-          handleSubmit={handleUpdate}/> }>
+          handleUpdate={handleUpdate}/> }>
         </Route>
       </Switch>
     </div>

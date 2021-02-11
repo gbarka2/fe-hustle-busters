@@ -50,10 +50,10 @@ const Profile = (props) => {
           <hr />
           {
           props.userLeads ? props.userLeads.map((lead, index) => (
-            <Lead lead={lead} key={index} />
+            <Lead lead={lead} key={index} deleteLead={props.deleteLead} setSelectedLead={props.setSelectedLead} handleUpdate={props.handleUpdate} />
           ))        
           : user.leads.map((lead, index) => (
-            <Lead lead={lead} key={index} />
+            <Lead lead={lead} key={index} deleteLead={props.deleteLead} setSelectedLead={props.setSelectedLead} handleUpdate={props.handleUpdate} />
           ))} 
         </div>
     )
