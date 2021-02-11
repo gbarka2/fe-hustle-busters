@@ -41,21 +41,24 @@ const Profile = (props) => {
   
   const loaded = () => (
         <div className="profile-div">
-          <h2>Hi {user.firstName} {user.lastName}!</h2>   
-          <Search value="Your Hustles" placeholder="Enter Company Name" handleChange={handleUserLeadChange} handleSubmit={handleUserLeadSubmit} /> 
+          <h2 className="profile-h2">Hi {user.firstName} {user.lastName}!</h2>   
+          <Search 
+            value="Your Hustles" 
+            placeholder="Enter Company Name" 
+            handleChange={handleUserLeadChange} 
+            handleSubmit={handleUserLeadSubmit}/> 
           <hr />
           {
           props.userLeads ? props.userLeads.map((lead, index) => (
             <Lead lead={lead} key={index} deleteLead={props.deleteLead} setSelectedLead={props.setSelectedLead} handleUpdate={props.handleUpdate} />
           ))        
-
           : user.leads.map((lead, index) => (
             <Lead lead={lead} key={index} deleteLead={props.deleteLead} setSelectedLead={props.setSelectedLead} handleUpdate={props.handleUpdate} />
           ))} 
         </div>
     )
   
-  const loading = <h1>Hustling...</h1>
+  const loading = <h2 className="profile-h2">Hustling...</h2>
 
   return user.leads ? loaded() : loading
 }
