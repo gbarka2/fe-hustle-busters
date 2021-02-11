@@ -1,3 +1,37 @@
+/* GLOBAL STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:ital,wght@0,300;0,700;1,300&family=Shrikhand&display=swap');
+
+:root{
+  --background: #ffd58e;
+  --orange: #ff9b5a;
+  --light-red: #f26249;
+  --red: #ec2f3b;
+  --aqua: #52b3b6;
+  --logo-font: 'Monoton', sans-serif;
+  --h2: 'Shrikhand', cursive;
+  --h3-p:'Montserrat', sans-serif;
+}
+
+div{
+  background-color: var(--background);
+  /* background-image: ("https://www.muralswallpaper.com/app/uploads/70s-rainbow-wave-retro-wallpaper-mural-Plain-820x532@2x.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; */
+}
+
+a{
+  text-decoration: none;
+  color: none;
+  cursor: pointer;
+}
+
+button{
+  border-radius: 12px;
+}
+
+
 /* LOGIN COMPONENET  */
 
 .login-div {
