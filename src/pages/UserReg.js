@@ -23,19 +23,11 @@ const UserReg = (props) => {
     const handleChange = (event) => {
         setRegData({...regData, [event.target.id]: event.target.value })
     }
-
-    //If data exists ... POST MVP
-    //     if (regData.firstName.length &&
-    //         regData.lastName.length &&
-    //         regData.email.length &&
-    //         regData.userName.length &&
-    //         regData.password.length){
-    // if statements on right after the other - line 15
         
 
     return(
         <div className="userReg-div">
-            <h3 className="userReg-h3">Create New User Account</h3>
+            <h2 className="userReg-h2">Create New User Account</h2>
             <form className="userReg-form">
                 <label className="userReg-label">First Name</label>
                 <input
@@ -83,7 +75,7 @@ const UserReg = (props) => {
                     className="submit-button" 
                     type="submit"
                     onClick={handleSubmit}>
-                    Register as New User
+                    Register
                 </button>
             </form>    
         </div>
