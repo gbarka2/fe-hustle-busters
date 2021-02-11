@@ -181,7 +181,8 @@ React.useEffect(() => {
           setSelectedLead={setSelectedLead} 
           selectedLead={selectedLead} 
           selectLead={selectLead} 
-          deleteLead={deleteLead} />}>
+          deleteLead={deleteLead} 
+          getLeads={getLeads} />}>
         </Route>
         <Route
           path='/my-profile'
