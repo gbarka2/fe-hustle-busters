@@ -6,17 +6,17 @@ import Search from '../components/Search'
 const Division = (props) => {
   const { divisions } = props
 
-  const handleDivisionChange = (event) => {
-    event.preventDefault()
-    props.setSearchDivision(event.target.value)
-  }
+  // const handleDivisionChange = (event) => {
+  //   event.preventDefault()
+  //   props.setSearchDivision(event.target.value)
+  // }
 
-  const handleDivisionSubmit = (event) => {
-    event.preventDefault()
-    if (props.searchDivision !== "") {
-        props.getDivisionByName(props.searchDivision)
-    }
-  }
+  // const handleDivisionSubmit = (event) => {
+  //   event.preventDefault()
+  //   if (props.searchDivision !== "") {
+  //       props.getDivisionByName(props.searchDivision)
+  //   }
+  // }
 
 
   const loaded = () => (
@@ -32,7 +32,7 @@ const Division = (props) => {
           <div className="leads-div">
           {division.leads.map((lead, index) => (
             <div>
-              <Lead lead={lead} key={index} selectLead={props.selectLead} emptyLead={props.emptyLead}/>
+              <Lead lead={lead} key={index} selectLead={props.selectLead} emptyLead={props.emptyLead} deleteLead={props.deleteLead}/>
             </div>
           ))}
         </div>
