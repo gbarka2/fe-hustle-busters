@@ -19,7 +19,7 @@ const Lead = (props,) => {
         <p>{props.lead.companyName}</p>
         <div>
           <Link to='/lead-edit'>
-            <button onClick={props.handleSubmit}>
+            <button onClick={() => {props.setSelectedLead(props.lead)}}>
               Edit Lead
             </button>
           </Link>

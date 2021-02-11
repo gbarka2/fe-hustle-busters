@@ -57,7 +57,7 @@ function App() {
   //new user registration form
   const [regData, setRegData] = React.useState()
 
-
+  console.log('app selectedlead', selectedLead)
   //CREATE USER
   const createUser = (newUser) => {
     fetch(url + "/usernames/", {
@@ -116,27 +116,28 @@ React.useEffect(() => {
   }
 
   //PASSING LEAD SATE TO FUNCTION
-  const selectLead = (lead) => {
-    setSelectedLead(lead)
-  }
+  // const selectLead = (lead) => {
+  //   setSelectedLead(lead)
+  // }
 
   //UPDATE AN EXISTING LEAD
-  const handleUpdate = (lead) => {
-    fetch(url + '/leads/' + lead._id, {
+  const handleUpdate = () => {
+    console.log('handleupdate', selectedLead._id)
+    fetch(url + '/leads/' + selectedLead._id, {
       methods: "put",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(lead)
+      body: JSON.stringify(selectedLead)
     })
-    .then(()=>{
-      getLeads()
-    })
+    // .then((data)=>{
+    //   getLeads(data)
+    // })
   }
-
 
   //DELETE A LEAD
   const deleteLead = (lead) => {
+    console.log(lead._id)
     fetch(url + '/leads/' + lead._id, {
       method: "delete"
     })
@@ -166,11 +167,13 @@ React.useEffect(() => {
           divisions={divisions.data} 
           leads={leads.data} 
           getDivisionByName={getDivisionByName} 
-          searchDivision= {searchDivision} 
+          searchDivision={searchDivision} 
           setSearchDivision={setSearchDivision} 
           setDivisions={setDivisions} 
-          selectLead={selectLead} 
-          emptyLead={emptyLead} />}/>
+          // selectLead={selectLead} 
+          emptyLead={emptyLead} 
+          deleteLead={deleteLead}
+          />}/>
         
         <Route
           path='/all-leads'
@@ -180,9 +183,10 @@ React.useEffect(() => {
           setSearchAllLeads={setSearchAllLeads} 
           setSelectedLead={setSelectedLead} 
           selectedLead={selectedLead} 
-          selectLead={selectLead} 
-          deleteLead={deleteLead} 
-          getLeads={getLeads} />}>
+          // selectLead={selectLead} 
+          getLeads={getLeads}
+          deleteLead={deleteLead}
+          />}>
         </Route>
         <Route
           path='/my-profile'
