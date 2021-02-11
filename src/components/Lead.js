@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom'
 
 
 const Lead = (props,) => {
-  console.log('lead props-',props)
+  // console.log('lead props-', props.deleteLead)
+  // console.log('lead props2-', props)
 
 
   // const handleDeleteClick = (event) => {
