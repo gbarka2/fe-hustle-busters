@@ -2,12 +2,8 @@ import React from "react"
 
 
 const UserReg = (props) => {
-
-    console.log('props-', props)
-    
     //set state
     const [regData, setRegData] = React.useState(props.user)
-
 
     //click even handler for sending data to backend
     const handleSubmit = (event) => {
@@ -39,9 +35,9 @@ const UserReg = (props) => {
 
     return(
         <div className="userReg-div">
-           <h3 className="userReg-h3">Create New User Account</h3>
-           <form className="userReg-form">
-               <label className="userReg-label">First Name</label>
+            <h3 className="userReg-h3">Create New User Account</h3>
+            <form className="userReg-form">
+                <label className="userReg-label">First Name</label>
                 <input
                     className="userReg-input" 
                     type="text"

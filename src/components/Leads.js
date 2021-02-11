@@ -2,9 +2,6 @@ import React from 'react'
 import Lead from './Lead'
 
 const Leads = (props) => {
-
-  const url = "https://hustle-busters.herokuapp.com"
-  console.log('leads props-', props)
   
   return (
     <div className="leads-div">
