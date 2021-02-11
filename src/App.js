@@ -2,7 +2,6 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import React from 'react'
 
-
 //Components & Pages
 import Navigation from './components/Nav'
 import Login from './components/Login'
@@ -46,6 +45,7 @@ function App() {
     estimatedRevenue: "",
     actualRevenue: ""
   }
+
   //STATES
   const [leads, setLeads] = React.useState([])
   const [divisions, setDivisions] = React.useState([])
@@ -54,10 +54,10 @@ function App() {
   const [userLeads, setUserLeads] = React.useState([])
   const [searchAllLeads, setSearchAllLeads] = React.useState([])
   const [selectedLead, setSelectedLead] = React.useState(emptyLead)
-  //new user registration form
   const [regData, setRegData] = React.useState()
 
   console.log('app selectedlead', selectedLead)
+  
   //CREATE USER
   const createUser = (newUser) => {
     fetch(url + "/usernames/", {
@@ -124,15 +124,15 @@ React.useEffect(() => {
   const handleUpdate = () => {
     console.log('handleupdate', selectedLead._id)
     fetch(url + '/leads/' + selectedLead._id, {
-      methods: "put",
+      method: "put",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(selectedLead)
     })
-    // .then((data)=>{
-    //   getLeads(data)
-    // })
+    .then((data)=>{
+      getLeads(data)
+    })
   }
 
   //DELETE A LEAD
