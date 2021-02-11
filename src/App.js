@@ -122,9 +122,9 @@ React.useEffect(() => {
 
   //UPDATE AN EXISTING LEAD
 
-  const handleUpdate = () => {
-    console.log('handleupdate', selectedLead._id)
-    fetch(url + '/leads/' + selectedLead._id, {
+  const handleUpdate = (lead) => {
+    console.log('handleupdate', lead._id)
+    fetch(url + '/leads/' + lead._id, {
       method: "put",
       headers: {
         "Content-Type": "application/json"
@@ -185,11 +185,8 @@ React.useEffect(() => {
           path='/all-leads'
           render={(rp) => <Company 
           leads={leads} 
-          searchAllLeads={searchAllLeads} 
-          setSearchAllLeads={setSearchAllLeads} 
-          setSelectedLead={setSelectedLead} 
           selectedLead={selectedLead} 
-          getLeads={getLeads}
+          setSelectedLead={setSelectedLead} 
           deleteLead={deleteLead}
           />}>
         </Route>

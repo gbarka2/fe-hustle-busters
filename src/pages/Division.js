@@ -36,6 +36,7 @@ const Division = (props) => {
                 lead={lead} 
                 key={index} 
                 selectLead={props.selectLead} 
+                setSelectedLead={props.setSelectedLead} 
                 emptyLead={props.emptyLead} 
                 deleteLead={props.deleteLead}/>
             </div>

@@ -14,10 +14,8 @@ const Leads = (props) => {
           <Lead 
           key={index} 
           lead={lead} 
-          setSelectedLead={props.setSelectedLead} 
           selectedLead={props.selectedLead} 
-          selectLead={props.selectLead} 
-          emptyLead="test" 
+          setSelectedLead={props.setSelectedLead} 
           deleteLead={props.deleteLead}/>
         ))
         : ""
