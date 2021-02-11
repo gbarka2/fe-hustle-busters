@@ -7,7 +7,6 @@ import {BrowserRouter as Router} from 'react-router-dom'
 //Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 ReactDOM.render(
   <Router>
     <React.StrictMode>

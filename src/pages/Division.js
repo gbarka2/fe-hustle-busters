@@ -1,28 +1,11 @@
 import React from "react"
 import Lead from "../components/Lead"
-import Search from '../components/Search'
-
 
 const Division = (props) => {
   const { divisions } = props
 
-  // const handleDivisionChange = (event) => {
-  //   event.preventDefault()
-  //   props.setSearchDivision(event.target.value)
-  // }
-
-  // const handleDivisionSubmit = (event) => {
-  //   event.preventDefault()
-  //   if (props.searchDivision !== "") {
-  //       props.getDivisionByName(props.searchDivision)
-  //   }
-  // }
-
-
   const loaded = () => (
     <>
-    {/* this is right */}
-      {/* <Search value="Divisions" placeholder="Enter Division Here" handleChange={handleDivisionChange} handleSubmit={handleDivisionSubmit} /> */}
       <div className="division-div">
       {divisions.map((division) => (
         <article className="division-article" key={division._id}>
@@ -36,7 +19,7 @@ const Division = (props) => {
                 lead={lead} 
                 key={index} 
                 selectLead={props.selectLead} 
-                emptyLead={props.emptyLead} 
+                setSelectedLead={props.setSelectedLead} 
                 deleteLead={props.deleteLead}/>
             </div>
           ))}
