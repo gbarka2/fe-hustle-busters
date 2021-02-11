@@ -2,9 +2,6 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 const Login = (props) => {
-  //THIS IS UNFINISHED!
-  // const [loginData, setLoginData] = React.useState(props.user)
-  // console.log("login state-", )
 
     return(
         <div className="login-div">
