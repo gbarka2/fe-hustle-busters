@@ -8,14 +8,18 @@ import Button from 'react-bootstrap/Button'
 const About = (props) => {
     return(
         <div className="about-div">
-          <h2>About</h2>
-          <p>Hustle Busters is a light, 70's-themed CRM tool built as a group project for General Assembly's Software Engineering Immersive. The backend uses a custom Express database. The user interface was created with React and React-Bootstrap. It currently includes only basic CRUD functionality, but we'll keep working to expand!</p>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://res.cloudinary.com/dcvgmixhx/image/upload/v1612977845/Samantha_Solomon_2_BW_v2_korbt1.jpg" alt="photo of Samantha Solomon" />
-            <Card.Body>
-              <Card.Title>Samantha Solomon (she/her)</Card.Title>
-              <Card.Text>
-                Samantha the was main wireframe designer of the app and Trello taskmaster. She focused on frontend engineering and built out the navigation, user registration page, profile page, and this page. She also directed styling.
+          <h2 className="about-h2">About</h2>
+          <p className="about-p">Hustle Busters is a light, 70's-themed CRM tool built as a group project for General Assembly's Software Engineering Immersive. The backend uses a custom Express database. The user interface was created with React and React-Bootstrap. It currently includs only basic CRUD functionality, but we'll keep working to expand!</p>
+          <Card style={{ width: '18rem' }} 
+                className="about-card">
+            <Card.Img 
+                variant="top" 
+                src="https://res.cloudinary.com/dcvgmixhx/image/upload/v1612977845/Samantha_Solomon_2_BW_v2_korbt1.jpg" 
+                alt="photo of Samantha Solomon" />
+            <Card.Body className="about-card-body">
+              <Card.Title className="about-card-title">Samantha Solomon (she/her)</Card.Title>
+              <Card.Text className="about-card-text">
+                Samantha the was main wireframe designer of the app and trello taskmaster. She focused on frontend engineering and built out the navigation, user registration page, profile page, and this page. She also directed styling.
               </Card.Text>
               <Button 
                 className="about-card-button" 
@@ -37,7 +41,7 @@ const About = (props) => {
             <Card.Body className="about-card-body">
               <Card.Title className="about-card-title">Gary Barkauski (he/him)</Card.Title>
               <Card.Text className="about-card-text">
-                Gary played the full stack roll, touching both the backend and front end of the app. He worked on the ... He also came up with the idea for this app! 
+                Gary played the full stack roll, touching both the backend and front end of the app. He worked on... He also came up with the idea for this app! 
               </Card.Text>
               <Button 
                 className="about-card-button" 
