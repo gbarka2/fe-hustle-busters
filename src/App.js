@@ -166,21 +166,9 @@ React.useEffect(() => {
           path='/division-leads'
           render={(rp) => <Division {...rp} 
           divisions={divisions.data} 
-          leads={leads.data} 
-          getDivisionByName={getDivisionByName} 
-          searchDivision={searchDivision} 
-          setSearchDivision={setSearchDivision} 
-          setDivisions={setDivisions} 
-          // selectLead={selectLead} 
-          emptyLead={emptyLead} 
-          deleteLead={deleteLead}
           setSelectedLead={setSelectedLead} 
-          selectedLead={selectedLead} 
-          getLeads={getLeads}
           deleteLead={deleteLead}
-          handleUpdate={handleUpdate}
           />}/>
-        
         <Route
           path='/all-leads'
           render={(rp) => <Company 
