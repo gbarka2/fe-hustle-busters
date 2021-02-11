@@ -194,7 +194,9 @@ React.useEffect(() => {
           setLeads={setLeads} 
           searchUserLead={searchUserLead} 
           setSearchUserLead={setSearchUserLead} getLeadByCompanyNameUser={getLeadByCompanyNameUser}
-          handleSubmit={handleUpdate}/>}>
+          handleUpdate={handleUpdate}
+          setSelectedLead={setSelectedLead}
+          />}>
         </Route>
         <Route path='/about'>
           <About />
@@ -203,7 +205,7 @@ React.useEffect(() => {
           path='/lead-edit'
           render={(rp) => <Form {...rp} 
           selectedLead={selectedLead} 
-          handleSubmit={handleUpdate}/> }>
+          handleUpdate={handleUpdate}/> }>
         </Route>
       </Switch>
     </div>

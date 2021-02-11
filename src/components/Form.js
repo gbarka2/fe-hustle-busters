@@ -9,8 +9,8 @@ const Form = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.handleSubmit(formData)
-    props.history.push('/my-profile')
+    props.handleUpdate(formData)
+    props.history.push('/all-leads')
   }
 
   const handleChange = (event) => {
