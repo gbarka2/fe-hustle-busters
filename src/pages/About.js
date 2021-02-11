@@ -63,7 +63,7 @@ const About = (props) => {
             <Card.Body className="about-card-body">
               <Card.Title className="about-card-title">Troy Lemons Jr. (he/him)</Card.Title>
               <Card.Text className="about-card-text">
-                Troy was the backend engineering master of this app. He built out the three data models and CRUD routes for each. On the frontend he worked on ...
+                Troy was the backend engineering master of this app. He built out the three data models and CRUD routes for each. On the frontend he worked on the division component and the login authentication.
               </Card.Text>
               <Button 
                 className="about-card-button" 
