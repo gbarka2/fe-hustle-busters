@@ -39,56 +39,54 @@ const UserReg = (props) => {
 
     return(
         <div className="userReg-div">
-           <h3>Create New User Account</h3>
-           <form>
-               <label>First Name</label>
-                <input 
+           <h3 className="userReg-h3">Create New User Account</h3>
+           <form className="userReg-form">
+               <label className="userReg-label">First Name</label>
+                <input
+                    className="userReg-input" 
                     type="text"
                     id="firstName"
                     value={regData.firstName}
-                    onChange={handleChange}
-                />
-                <label>Last Name</label>
+                    onChange={handleChange}/>
+                <label className="userReg-label">Last Name</label>
                 <input 
+                    className="userReg-input" 
                     type="text"
                     id="lastName"
                     value={regData.lastName}
-                    onChange={handleChange}
-                />
-                <label>Email</label>
-                <input 
+                    onChange={handleChange}/>
+                <label className="userReg-label">Email</label>
+                <input
+                    className="userReg-input"  
                     type="email"
                     id="email"
                     value={regData.email}
-                    onChange={handleChange}
-
-                />
-                <label>User Name</label>
-                <input 
+                    onChange={handleChange}/>
+                <label className="userReg-label">User Name</label>
+                <input
+                    className="userReg-input"  
                     type="text"
                     id="userName"
                     value={regData.userName}
-                    onChange={handleChange}
-                />
-                <label>Password</label>
-                <input 
+                    onChange={handleChange}/>
+                <label className="userReg-label">Password</label>
+                <input
+                    className="userReg-input"  
                     type="password"
                     id="password"
                     value={regData.password}
-                    onChange={handleChange}
-
-                />
-                <label>Confrim Password</label>
-                <input 
+                    onChange={handleChange}/>
+                <label className="userReg-label">Confrim Password</label>
+                <input
+                    className="userReg-input"  
                     type="password"
                     id="confirmPassword"
                     value={regData.confirmPassword}
-                    onChange={handleChange}
-                />
+                    onChange={handleChange}/>
                 <button
+                    className="userReg-button" 
                     type="submit"
-                    onClick={handleSubmit}
-                    >
+                    onClick={handleSubmit}>
                     Register as New User
                 </button>
             </form>    

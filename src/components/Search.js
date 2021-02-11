@@ -18,16 +18,15 @@ const Search = (props) => {
 
     return(
         <div className="search-div">Search {props.value}
-            <form onSubmit={props.handleSubmit}>
-
-                <input 
+            <form className="search-form" onSubmit={props.handleSubmit}>
+                <input
+                    className="search-input" 
                     type="text"
                     name="searchbox"
-                    // value="blank"
                     placeholder={props.placeholder}
                     onChange={props.handleChange} 
                 />
-                <input type="submit" value="Submit"/>
+                <input className="search-button" type="submit" value="Submit"/>
             </form>
             <hr />
         </div>
