@@ -39,7 +39,7 @@ const Profile = (props) => {
           <h2 className="profile-h2">Hi {user.firstName} {user.lastName}!</h2>   
           <Search 
             value="Your Hustles" 
-            placeholder="Enter Company Name" 
+            placeholder="Company Name" 
             handleChange={handleUserLeadChange} 
             handleSubmit={handleUserLeadSubmit}/> 
           <hr />
