@@ -7,7 +7,7 @@
   --light-red: #f26249;
   --red: #ec2f3b;
   --aqua: #52b3b6;
-  --blue: #007291;
+  --blue: #0067a5;
   --logo: 'Monoton', sans-serif;
   --h2: 'Shrikhand', cursive;
   --h3-p:'Montserrat', sans-serif;
@@ -63,14 +63,6 @@ input{
   padding: 5%
 }
 
-button{
-  border: 2px solid var(--red);
-  border-radius: 50%;
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-family: var(--h3-p);
-}
-
 /* NAV */
 .nav-div{
   background-color: var(--aqua);
@@ -117,66 +109,70 @@ button{
   justify-content: space-evenly;
 }
 
-/* LEADS COMPONENT */
-.leads-table-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+/* COMPANY COMPONENT */
+.company-div{
+  margin: 10%;
 }
 
+/* LEAD COMPONENT */
 .lead-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  align-items: left;
   background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
-}
-
-.company-header {
-  margin-top: 2px;
-  padding-left: 18px;
-  margin-bottom: 0;
-  box-shadow: 0 10px 6px -10px black;
-  background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
-  border-bottom: 1px solid rgb(160, 160, 160);
 }
 
 .lead-company-name {
   margin-bottom: 0;
-  margin-left: 7px;
   padding: 10px;
+  font-size: 1.3rem;
+  /* font-weight: 700; */
 }
 
-.lead-button {
-  font-size: 12px;
-  border-radius: 50%;
-  padding: 7px 6px;
-  background-color: #a4d2d3;
+.lead-button-update {
+  border-radius: 12px;
+  border: none;
+  background-color: var(--blue);
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
   font-family: var(--h3-p);
-  font-weight: lighter;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  font-weight: 700;
+  margin: 5%;
+  text-align: center
+}
+
+.lead-button-delete {
+  border-radius: 12px;
+  border: none;
+  background-color: var(--red);
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: var(--h3-p);
+  font-weight: 700;
+  margin: 5%;
+  text-align: center
+}
+
+/* DIVISION COMPONENT */
+.division-div {
+  background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
+  margin: 10%
 }
 
 .division-article {
-  border-bottom: 1px solid rgb(160, 160, 160);
-}
-
-.division-div {
-  background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
-}
-
-.division-h2 {
-  margin-top: 4px;
-  padding-left: 18px;
+  margin-bottom: 8%;
 }
 
 .division-h3 {
-  padding-left: 16px;
-  font-family: 'Shrikhand', cursive;
-  font-size: 16px;
-  color: #ff9b5a
+  font-family: var(--h3-p);
+  font-size: 1.5rem;
+  font-weight: 700; 
+}
+
+.division-motto{
+  font-family: var(--h3-p);
+  font-size: 1rem;
+  font-style: italic;
 }
 
 /*ABOUT COMPONENT*/
