@@ -42,7 +42,6 @@ const Profile = (props) => {
             placeholder="Company Name" 
             handleChange={handleUserLeadChange} 
             handleSubmit={handleUserLeadSubmit}/> 
-          <hr />
           {
           props.userLeads ? props.userLeads.map((lead, index) => (
             <Lead lead={lead} key={index} deleteLead={props.deleteLead} setSelectedLead={props.setSelectedLead} handleUpdate={props.handleUpdate} />

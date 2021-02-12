@@ -237,6 +237,7 @@ input{
   margin: 10%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-top: 15px;
 }
 
@@ -294,6 +295,45 @@ input{
     width: 250px;
     margin-top: 15px;
   }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .search-div {
+    justify-content: space-around;
+  }
+
+  .search-title {
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .submit-button {
+    margin: 0;
+    margin-left: 240px;
+  }
+
+  .form-section {
+    margin-bottom: 30px;
+  }
+
+  .submit-button{
+    width: 350px;
+    margin-left: 180px;
+    margin-top: 15px;
+  }
+
+  .form-div form .submit-button {
+    margin-left: 255px;
+  }
+
+  .login-form .submit-button {
+    margin-left: 227px;
+  }
+
+
+
 
 }
 
