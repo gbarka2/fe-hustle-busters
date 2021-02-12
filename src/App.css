@@ -130,7 +130,6 @@ input{
   margin-bottom: 0;
   padding: 10px;
   font-size: 1.3rem;
-  /* font-weight: 700; */
 }
 
 .lead-button-update {
@@ -260,6 +259,14 @@ input{
 }
 
 @media screen and (min-width: 768px) {
+  label{
+    font-size: 1.5rem;
+  }
+  
+  .login-input{
+    margin: 2%;
+    padding: 2%
+  }
 
   .search-div {
     display: flex;
@@ -283,22 +290,27 @@ input{
   }
 
   .form-label, .userReg-label {
-    font-size: 18px;
+    font-size: 1.5rem;
+    margin: 3%;
   }
 
   .form-input {
-    width: 300px;
+    width: 50%;
+    height: 15px;
   }
 
   .userReg-input {
-    height: 20px;
-    width: 250px;
+    height: 15px;
+    width: 50%;
     margin-top: 15px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-
+  .submit-button{
+    padding: 2%
+  }
+  
   .search-div {
     justify-content: space-around;
   }
@@ -320,20 +332,32 @@ input{
 
   .submit-button{
     width: 350px;
-    margin-left: 180px;
-    margin-top: 15px;
+    margin: 5%
   }
 
-  .form-div form .submit-button {
-    margin-left: 255px;
+  .login-create{
+    text-align: left;
+    margin-left: 5%
   }
 
-  .login-form .submit-button {
-    margin-left: 227px;
+  input{
+    padding: 3%
   }
 
+  .userReg-input{
+    width: 70%;
+  }
 
+  .search-input{
+    width: 50%
+  }
 
+  .card-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3%
+  }
 
 }
 
