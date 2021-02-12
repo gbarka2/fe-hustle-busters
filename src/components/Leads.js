@@ -1,17 +1,21 @@
 import React from 'react'
 import Lead from './Lead'
 
-const Leads = ({leads}) => {
-
-  console.log('leads props', leads.data)
+const Leads = (props) => {
+  
   return (
     <div className="leads-div">
       {
-        leads.data !== undefined ?
-        leads.data.map((lead, index) => (
-          <Lead lead={lead} key={index} />
+        props.leads.data !== undefined ?
+        props.leads.data.map((lead, index) => (
+          <Lead 
+          key={index} 
+          lead={lead} 
+          selectedLead={props.selectedLead} 
+          setSelectedLead={props.setSelectedLead} 
+          deleteLead={props.deleteLead}/>
         ))
-        : ""
+        : <h2>Hustling...</h2>
       }
     </div>
   )

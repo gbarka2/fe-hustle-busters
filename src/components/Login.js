@@ -1,28 +1,35 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const Login = (props) => {
+
     return(
         <div className="login-div">
-          <h4>Logo Goes Here</h4>   
-          <h1>Hustle Busters</h1>
-          <h2>Hustle your way into BUSTING competition</h2>
-            <form>
-              <h4>Username</h4>
-              <input 
+          <h1 className="login-h1">Hustle Busters</h1>
+          <h2 className="login-h2">Hustle your way into BUSTING competition</h2>
+            <form className="login-form">
+              <label className="login-label">Username</label>
+              <input
+                className="login-input" 
                 type="text"
                 name="username"
-                value="blank"
-                onChange="blank"  
+                onChange=" "  
               />
-              <input 
+              <label className="login-label">Password</label>
+              <input
+                className="login-input"  
                 type="text"
                 name="password"
-                value="blank"
-                onChange="blank"  
+                onChange=" "  
               />
-              <input type="submit" value="blank" />
+              <input
+                className="submit-button" 
+                type="submit" 
+                value="Login"/>
             </form>
-            <button>Create New Account</button>
+            <Link to="/user-registration">
+            <p className="login-create">Create New Account</p>
+            </Link>
         </div>
     )
 }

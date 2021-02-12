@@ -1,21 +1,20 @@
 import React from 'react'
-import Form from './Form'
+import {Link} from 'react-router-dom'
 
 const Lead = (props) => {
-
+  
   return (
-    <table className="lead-div">
-      <tr>
-        <th>Company Name</th>
-        <th>Contact Name</th>
-        <th>Actual Revenue</th>
-      </tr>
-      <tr>
-        <td>{props.lead.contactName}</td>
-        <td>{props.lead.companyName}</td>
-      </tr>
-      {/* <Form /> */}
-    </table>
+    <div className="lead-div">
+        <p className="lead-company-name">{props.lead.companyName}</p>
+        <div className="lead-button-group">
+          <Link to='/lead-edit'>
+            <button className="lead-button-update" onClick={() => {props.setSelectedLead(props.lead)}}>
+              Update
+            </button>
+          </Link>
+          <button className="lead-button-delete" onClick={() => {props.deleteLead(props.lead)}}>Delete</button>
+        </div>
+    </div>
   )
 }
 

@@ -1,1 +1,368 @@
+/* GLOBAL STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:ital,wght@0,300;0,700;1,300&family=Shrikhand&display=swap');
+
+:root{
+  --background: #ffd58e;
+  --orange: #ff9b5a;
+  --light-red: #f26249;
+  --red: #ec2f3b;
+  --aqua: #52b3b6;
+  --blue: #0067a5;
+  --logo: 'Monoton', sans-serif;
+  --h2: 'Shrikhand', cursive;
+  --h3-p:'Montserrat', sans-serif;
+}
+
+#root{
+  background-color: var(--background);
+  height: 100%;
+  background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
+}
+
+Link, a{
+  text-decoration: none;
+  color: none;
+  cursor: pointer;
+}
+
+h1{
+  font-family: var(--logo);
+  color: var(--red);
+}
+
+h2{
+  font-family: var(--h2);
+  color: var(--light-red);
+}
+
+p{
+  font-family: var(--h3-p)
+}
+
+.submit-button{
+  border-radius: 12px;
+  border: none;
+  background-color: var(--aqua);
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.3rem;
+  font-family: var(--h3-p);
+  font-weight: 700;
+  margin: 10%
+}
+
+label{
+  font-family: var(--h3-p);
+  margin: 5%
+}
+
+input{
+  border: 2px solid var(--orange);
+  border-radius: 5px;
+  margin: 5%;
+  padding: 5%
+}
+
+/* NAV */
+.nav-div{
+  background-color: var(--aqua);
+}
+
+.nav-brand{
+  font-family: var(--logo);
+}
+
+.nav-link{
+  font-family: var(--h2);
+}
+
+
+/* LOGIN COMPONENET  */
+.login-div {
+  margin: 10%
+}
+
+.login-h1{
+  font-size: 3rem
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.login-create{
+  color: black;
+  text-align: center;
+}
+
+.login-create:hover{
+  text-decoration: underline;
+}
+
+/* USER REGISTRATION */
+.userReg-div{
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* COMPANY COMPONENT */
+.company-div{
+  margin: 10%;
+}
+
+/* LEAD COMPONENT */
+.lead-div {
+  align-items: left;
+  background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
+}
+
+.lead-company-name {
+  margin-bottom: 0;
+  padding: 10px;
+  font-size: 1.3rem;
+}
+
+.lead-button-update {
+  border-radius: 12px;
+  border: none;
+  background-color: var(--blue);
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: var(--h3-p);
+  font-weight: 700;
+  margin: 5%;
+  text-align: center
+}
+
+.lead-button-delete {
+  border-radius: 12px;
+  border: none;
+  background-color: var(--red);
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: var(--h3-p);
+  font-weight: 700;
+  margin: 5%;
+  text-align: center
+}
+
+/* DIVISION COMPONENT */
+.division-div {
+  background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
+  margin: 10%
+}
+
+.division-article {
+  margin-bottom: 8%;
+}
+
+.division-h3 {
+  font-family: var(--h3-p);
+  font-size: 1.5rem;
+  font-weight: 700; 
+}
+
+.division-motto{
+  font-family: var(--h3-p);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/*ABOUT COMPONENT*/
+.about-div{
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-card{
+  margin-bottom: 5%;
+}
+
+.about-card-title{
+  font-family:var(--h3-p);
+  font-weight: 700;
+  color: var(--red)
+}
+
+.about-card-button{
+  margin-left: 7%;
+}
+
+.profile-div {
+  margin: 10%;
+  height: 100vh;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin-left: 15px;
+  height: 50px;
+}
+
+.search-div {
+  font-family: var(--h3-p)
+}
+
+.search-input {
+  height: 50px;
+  width: 300px;
+  overflow: inherit;
+}
+
+.form-div form, .userReg-form {
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.form-label {
+  margin: 0;
+  font-size: 14px;
+
+}
+
+.form-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-input {
+  height: 50px;
+  width: 170px;
+  margin-right: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  label{
+    font-size: 1.5rem;
+  }
+  
+  .login-input{
+    margin: 2%;
+    padding: 2%
+  }
+
+  .search-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  .search-title {
+    margin-left: 42px;
+    margin-bottom: 20px;
+  }
+
+  .lead-div, .lead-button-group  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+  }
+
+  .form-section {
+    align-items: center;
+  }
+
+  .form-label, .userReg-label {
+    font-size: 1.5rem;
+    margin: 3%;
+  }
+
+  .form-input {
+    width: 50%;
+    height: 15px;
+  }
+
+  .userReg-input {
+    height: 15px;
+    width: 50%;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .submit-button{
+    padding: 2%
+  }
+  
+  .search-div {
+    justify-content: space-around;
+  }
+
+  .search-title {
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .submit-button {
+    margin: 0;
+    margin-left: 240px;
+  }
+
+  .form-section {
+    margin-bottom: 30px;
+  }
+
+  .submit-button{
+    width: 350px;
+    margin: 5%
+  }
+
+  .login-create{
+    text-align: left;
+    margin-left: 5%
+  }
+
+  input{
+    padding: 3%
+  }
+
+  .userReg-input{
+    width: 70%;
+  }
+
+  .search-input{
+    width: 50%
+  }
+
+  .card-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3%
+  }
+
+}
+
+
+
+
+
 
