@@ -214,6 +214,11 @@ input{
   width: 100%;
   justify-content: space-around;
   margin-left: 15px;
+  height: 50px;
+}
+
+.search-div {
+  font-family: var(--h3-p)
 }
 
 .search-input {
@@ -221,6 +226,26 @@ input{
   width: 300px;
   overflow: inherit;
 }
+
+.form-div form, .userReg-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.form-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-input {
+  height: 50px;
+  width: 200px;
+  margin-right: 15px;
+}
+
+
+
 
 
 

@@ -15,7 +15,7 @@ const Leads = (props) => {
           setSelectedLead={props.setSelectedLead} 
           deleteLead={props.deleteLead}/>
         ))
-        : ""
+        : <h2>Hustling...</h2>
       }
     </div>
   )
