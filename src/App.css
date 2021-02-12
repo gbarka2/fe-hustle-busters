@@ -19,6 +19,12 @@
   background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
 }
 
+body {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, white , #f5d69b, #ffd58e);
+}
+
 Link, a{
   text-decoration: none;
   color: none;
@@ -183,6 +189,12 @@ input{
   justify-content: space-evenly;
 }
 
+.card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .about-card{
   margin-bottom: 5%;
 }
@@ -196,5 +208,137 @@ input{
 .about-card-button{
   margin-left: 7%;
 }
+
+.profile-div {
+  margin: 10%;
+  height: 100vh;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin-left: 15px;
+  height: 50px;
+}
+
+.search-div {
+  font-family: var(--h3-p)
+}
+
+.search-input {
+  height: 50px;
+  width: 300px;
+  overflow: inherit;
+}
+
+.form-div form, .userReg-form {
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.form-label {
+  margin: 0;
+  font-size: 14px;
+
+}
+
+.form-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-input {
+  height: 50px;
+  width: 170px;
+  margin-right: 15px;
+}
+
+@media screen and (min-width: 768px) {
+
+  .search-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  .search-title {
+    margin-left: 42px;
+    margin-bottom: 20px;
+  }
+
+  .lead-div, .lead-button-group  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+  }
+
+  .form-section {
+    align-items: center;
+  }
+
+  .form-label, .userReg-label {
+    font-size: 18px;
+  }
+
+  .form-input {
+    width: 300px;
+  }
+
+  .userReg-input {
+    height: 20px;
+    width: 250px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .search-div {
+    justify-content: space-around;
+  }
+
+  .search-title {
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .submit-button {
+    margin: 0;
+    margin-left: 240px;
+  }
+
+  .form-section {
+    margin-bottom: 30px;
+  }
+
+  .submit-button{
+    width: 350px;
+    margin-left: 180px;
+    margin-top: 15px;
+  }
+
+  .form-div form .submit-button {
+    margin-left: 255px;
+  }
+
+  .login-form .submit-button {
+    margin-left: 227px;
+  }
+
+
+
+
+}
+
+
+
+
 
 

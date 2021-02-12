@@ -39,10 +39,9 @@ const Profile = (props) => {
           <h2 className="profile-h2">Hi {user.firstName} {user.lastName}!</h2>   
           <Search 
             value="Your Hustles" 
-            placeholder="Enter Company Name" 
+            placeholder="Company Name" 
             handleChange={handleUserLeadChange} 
             handleSubmit={handleUserLeadSubmit}/> 
-          <hr />
           {
           props.userLeads ? props.userLeads.map((lead, index) => (
             <Lead lead={lead} key={index} deleteLead={props.deleteLead} setSelectedLead={props.setSelectedLead} handleUpdate={props.handleUpdate} />

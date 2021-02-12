@@ -29,48 +29,60 @@ const UserReg = (props) => {
         <div className="userReg-div">
             <h2 className="userReg-h2">Create New User Account</h2>
             <form className="userReg-form">
-                <label className="userReg-label">First Name</label>
-                <input
-                    className="userReg-input" 
-                    type="text"
-                    id="firstName"
-                    value={regData.firstName}
-                    onChange={handleChange}/>
-                <label className="userReg-label">Last Name</label>
-                <input 
-                    className="userReg-input" 
-                    type="text"
-                    id="lastName"
-                    value={regData.lastName}
-                    onChange={handleChange}/>
-                <label className="userReg-label">Email</label>
-                <input
-                    className="userReg-input"  
-                    type="email"
-                    id="email"
-                    value={regData.email}
-                    onChange={handleChange}/>
-                <label className="userReg-label">User Name</label>
-                <input
-                    className="userReg-input"  
-                    type="text"
-                    id="userName"
-                    value={regData.userName}
-                    onChange={handleChange}/>
-                <label className="userReg-label">Password</label>
-                <input
-                    className="userReg-input"  
-                    type="password"
-                    id="password"
-                    value={regData.password}
-                    onChange={handleChange}/>
-                <label className="userReg-label">Confrim Password</label>
-                <input
-                    className="userReg-input"  
-                    type="password"
-                    id="confirmPassword"
-                    value={regData.confirmPassword}
-                    onChange={handleChange}/>
+                <div className="form-section">
+                    <label className="userReg-label">First Name</label>
+                    <input
+                        className="userReg-input" 
+                        type="text"
+                        id="firstName"
+                        value={regData.firstName}
+                        onChange={handleChange}/>
+                </div>
+                <div className="form-section">
+                    <label className="userReg-label">Last Name</label>
+                    <input 
+                        className="userReg-input" 
+                        type="text"
+                        id="lastName"
+                        value={regData.lastName}
+                        onChange={handleChange}/>
+                </div>
+                <div className="form-section">
+                    <label className="userReg-label">Email</label>
+                    <input
+                        className="userReg-input"  
+                        type="email"
+                        id="email"
+                        value={regData.email}
+                        onChange={handleChange}/>
+                </div>
+                <div className="form-section">
+                    <label className="userReg-label">User Name</label>
+                    <input
+                        className="userReg-input"  
+                        type="text"
+                        id="userName"
+                        value={regData.userName}
+                        onChange={handleChange}/>
+                </div>
+                <div className="form-section">
+                    <label className="userReg-label">Password</label>
+                    <input
+                        className="userReg-input"  
+                        type="password"
+                        id="password"
+                        value={regData.password}
+                        onChange={handleChange}/>
+                </div>
+                <div className="form-section">
+                    <label className="userReg-label">Confrim Password</label>
+                    <input
+                        className="userReg-input"  
+                        type="password"
+                        id="confirmPassword"
+                        value={regData.confirmPassword}
+                        onChange={handleChange}/>
+                </div>
                 <button
                     className="submit-button" 
                     type="submit"
