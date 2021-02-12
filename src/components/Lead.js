@@ -8,11 +8,11 @@ const Lead = (props) => {
         <p className="lead-company-name">{props.lead.companyName}</p>
         <div className="lead-button-group">
           <Link to='/lead-edit'>
-            <button className="lead-button" onClick={() => {props.setSelectedLead(props.lead)}}>
+            <button className="lead-button-update" onClick={() => {props.setSelectedLead(props.lead)}}>
               Update
             </button>
           </Link>
-          <button className="lead-button" onClick={() => {props.deleteLead(props.lead)}}>Delete</button>
+          <button className="lead-button-delete" onClick={() => {props.deleteLead(props.lead)}}>Delete</button>
         </div>
     </div>
   )
