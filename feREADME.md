@@ -6,6 +6,8 @@ This is the frontend half of the app Hustle Busters. The app uses React to creat
 
 The app contains full CRUD functionality, utilizing get routes to generate lead tables, put and delete routes utilized by the buttons contained in each lead, and a create route to create a new user from the user registration form.
 
+[See backend repo here](https://github.com/gbarka2/be-hustle-busters)
+
 Future functionality includes but is not limited to:
 - Login for existing user
 - Edit a user
